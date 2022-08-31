@@ -1,0 +1,16 @@
+{{ $out := newScratch }}
+{{ $pageColor := .Page.Params.themeColor }}
+{{ if gt (len (string $pageColor)) 0 }}
+    {{- $modes:= split "black,dark,light" "," -}}
+    {{ $isLight := partial "variable/isLightColor" (dict "color" $pageColor) }}
+    {{- if in $modes $pageColor -}}
+        {{ $out.Set "dataMode" $pageColor }}
+    {{ else if $isLight }}
+        {{ $out.Set "dataMode" "light" }}
+    {{ else }}
+        {{ $out.Set "dataMode" "dark" }}
+    {{- end -}}
+{{ else }}
+    {{ $out.Set "dataMode" "" }}
+{{ end }}
+{{return $out.Get "dataMode"}}

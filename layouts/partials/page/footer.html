@@ -1,0 +1,15 @@
+{{- if not (in .Params.hide "footer") -}}
+<footer class="site_footer_grap unselectable">
+    <div class="has-text-centered">
+        {{- if .Site.Copyright -}}
+            <p>{{ .Site.Copyright | safeHTML }}</p>
+        {{- else -}}
+            {{ $currentYear := (now.Format "2006") }}
+            {{ $author := partial "variable/author" . }}
+            {{ $author := humanize $author }}
+            {{ $content := (printf "&copy;%s %s" $author $currentYear) }}
+            <p>{{ $content | safeHTML }}</p>
+        {{- end -}}
+    </div>
+</footer>
+{{- end -}}

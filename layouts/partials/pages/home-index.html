@@ -1,0 +1,30 @@
+{{- $context := . -}}
+{{- $pages := where .Site.RegularPages "Type" "not in" (slice "bb" "page" "about") -}}
+{{- $pages := $pages | intersect (where $pages "Params.hidden" "ne" true) -}}
+{{- $exSections := union (slice "hide" "hidden") .Site.Params.layout.ExcludeSections -}}
+{{- $pages := $pages | intersect (where $pages "Section" "not in" $exSections) | intersect (where $pages "Title" "ne" "") -}}
+
+{{- $paginator := .Paginate $pages -}}
+{{- $listStyle :=.Site.Params.Layout.listStyle -}}
+{{- $listStyleName :=cond (and ( and (ne $listStyle "list") (ne $listStyle "list-thumbnail")) (ne $listStyle "card")) "list" .Site.Params.Layout.listStyle -}}
+
+<div class="{{ if (partial "variable/hasBanner" .) }}top-safe-covered{{ else }}top-safe{{ end  }} {{ cond (eq .Site.Params.Layout.listStyle "list") "horizontal-safe" "" }}">
+    <div class="articles {{ $listStyleName }}">
+        <div class="articles-wrap">
+            {{- range $pageOne := $paginator.Pages -}}
+                {{- if .Title  -}}
+                    {{- $args := (dict "context" $context "current" .) -}}
+                    {{- if eq .Site.Params.Layout.listStyle "list" -}}
+                        {{ partial "pages/home-index-list" $args }}
+                    {{- else if eq  .Site.Params.Layout.listStyle "list-thumbnail" -}}
+                        {{ partial "pages/home-index-list-thumbnail" $args }}
+                    {{- else if eq  .Site.Params.Layout.listStyle "card" -}}
+                        {{ partial "pages/home-index-card" $args }}
+                    {{- else -}}
+                        {{ partial "pages/home-index-list" $args }}
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
+        </div>
+    </div>
+</div>

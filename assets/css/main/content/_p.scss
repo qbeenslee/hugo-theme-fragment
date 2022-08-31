@@ -1,0 +1,13 @@
+p {
+    font-size: 0.9375rem;
+    // text-align: justify;
+    font-weight: 400;
+    letter-spacing: 0.015rem;
+    color: var(--text-content);
+    max-width: 100%;
+
+    + p,
+    br {
+        margin-top: 0.75rem;
+    }
+}

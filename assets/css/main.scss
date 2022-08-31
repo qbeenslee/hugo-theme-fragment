@@ -1,0 +1,116 @@
+@charset "utf-8";
+{{ $color_anchor := .Site.Params.Layout.Color.anchor | default "#1abc9c" }}
+{{ $body_background := cond (eq .Site.Params.Layout.listStyle "card") "#f4f4f4" "#ffffff" }}
+//inject
+$color_anchor: {{ $color_anchor }};
+
+:root, .content  {
+    --color-mode: "light";
+    --bg: #fff;
+    --bg-index: {{ $body_background }};
+    --bg-fr: #f4f4f4;
+    --anchor: {{ $color_anchor }};
+    --similar:#ffffff;
+    --reverse: #000000;
+    --link: #1b69b6;
+    --block-card: #ffffff;
+    --block-light: #e4e4e4;
+    --block-similar: #f0f0f0;
+    --block-white-gradual: #ffffff;
+    --border-clear: #888888;
+    --border-light: #e5e5e5;
+    --border-divide: #dddddd;
+    --border-footer: #dddddd;
+    --border-nav: rgba(166, 166, 166, 0.43);
+    --text: #111;
+    --text-title:#333333;
+    --text-suammary: #555;
+    --text-secondary:#aeaeae;
+    --text-content: #444D;
+    --text-tip: #888888;
+    --small-bb: #1c2327;
+
+    @mixin darkmode {
+        --color-mode: "dark";
+        --bg: rgb(28,28,30);
+        --bg-index: rgb(28,28,30);
+        --bg-fr: rgb(28,28,30);
+        --similar:#000000;
+        --reverse: #ffffff;
+        --link: #e49649;
+        --block-card: #282828;
+        --block-light: #333333;
+        --block-similar: #282828;
+        --block-white-gradual: #ccc;
+        --border-clear: #666;
+        --border-light: #333;
+        --border-divide: #444444;
+        --border-footer: #333;
+        --border-nav: rgba(66, 66, 66, 0.5);
+        --text: #eee;
+        --text-title: #FFF;
+        --text-suammary: #aaaaaa;
+        --text-secondary:#515151;
+        --text-content: #ffffffcc;
+        --text-tip: #777777;
+        --small-bb: rgb(28,28,30);
+
+        * {
+            box-shadow: none !important;
+        }
+    }
+
+
+    &[data-mode="dark"] {
+        @include darkmode;
+    }
+
+    &[data-mode="black"] {
+        --color-mode: "black";
+        --bg: black;
+        --bg-index: rgb(28,28,30);
+        --bg-fr: rgb(28,28,30);
+        --similar:#000000;
+        --reverse: #ffffff;
+        --link: #e49649;
+        --block-card: #282828;
+        --block-light: #222;
+        --block-similar: #1F1F1F;
+        --block-white-gradual: #ccc;
+        --border-clear: #666;
+        --border-light: #333;
+        --border-divide: #333;
+        --border-footer: #161616;
+        --border-nav: rgba(66, 66, 66, 0.5);
+        --text: #eee;
+        --text-title:#f5f5f5;
+        --text-suammary: #aaaaaa;
+        --text-secondary:#515151;
+        --text-content: #ffffffcc;
+        --text-tip: #777777;
+        --small-bb: rgb(28,28,30);
+
+        * {
+            box-shadow: none !important;
+        }
+    }
+
+
+    &.dark:not([data-mode="light"]) {
+        @media (prefers-color-scheme: dark) {
+            @include darkmode;
+        }
+    }
+}
+
+@import "main/variables";
+@import "main/mixin";
+@import "main/layouts";
+@import "main/base";
+@import "main/index";
+@import "main/page";
+@import "main/content";
+@import "main/plugin";
+{{- if .Site.Params.Plugins.search -}}
+@import "main/plugin/search";
+{{- end -}}

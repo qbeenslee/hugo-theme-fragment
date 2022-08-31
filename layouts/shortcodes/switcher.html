@@ -1,0 +1,38 @@
+<section class="switcher">
+    <div class="switcher-wrapper">
+        {{ $id := substr (delimit (shuffle (split (md5 "fragment") "" )) "") 0 5 }}
+        {{ $group := printf "switcher-%s" $id }}
+        {{ $allContent := trim .Inner "\n" }}
+        {{ range $index, $item := split $allContent "<--->" }} <!--- 存在错误处理内嵌shortcode分割错误的bug --->
+            {{ if ne $index 0}}
+                <span class="separator" aria-hidden="true">/</span>
+            {{ end }}
+            {{ $paragraphs := split (trim $item "\n") "\n" }}
+            {{ $header := index $paragraphs 0 }}
+            {{ $follower := delimit (after 1 $paragraphs) "\n" }}
+            <input type="radio" class="toggle" name="{{ $group }}" id="{{ printf "%s-%d" $group $index }}" {{ if not $index }}checked="checked"{{ end }} />
+            <label for="{{ printf "%s-%d" $group $index }}">
+                {{ if hasPrefix $header "#" }}
+                    {{ $itemTitle := substr $header 1 }}
+                    {{ $itemTitle | safeHTML | $.Page.RenderString }}
+                {{ end }}
+            </label>
+            <div class="switcher-content markdown-inner">
+                {{ if hasPrefix $header "#" }}
+                    {{ if or (strings.HasSuffix (lower $header) "code") (strings.HasSuffix $header (T "code")) }}
+                        {{ if hasPrefix $follower "```"}}
+                            {{- $follower | safeHTML | $.Page.RenderString -}}
+                        {{ else}}
+                            {{/*  {{- printf "```\n%s\n```" $follower | safeHTML | $.Page.RenderString -}} */}}
+                            {{- $follower | $.Page.RenderString -}}
+                        {{end}}
+                    {{ else }}
+                        {{- $follower | $.Page.RenderString -}}
+                    {{ end }}
+                {{ else }}
+                    {{- $item | $.Page.RenderString -}}
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+</section>

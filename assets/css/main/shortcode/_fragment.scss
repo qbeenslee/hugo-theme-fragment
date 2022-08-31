@@ -1,0 +1,62 @@
+// wrap/match/normal/safe-full/full
+.fragment {
+    .fragment-wrap {
+        figure {
+            margin: 0;
+        }
+
+        img {
+            object-fit: contain;
+            object-position: top;
+        }
+    }
+
+    > .scope-wrap,
+    > .scope-match,
+    > .scope-normal,
+    > .scope-full,
+    > .scope-safe-full {
+
+        .fragment-cell ~ .fragment-cell {
+            margin-left: 2rem;
+            > figure {
+                float: right;
+            }
+        }
+    }
+
+    > .scope-safe-full {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    @media screen and (min-width: $size_page_max_content_width) {
+        > .scope-wrap {
+            width: fit-content;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+        }
+        > .scope-match,
+        > .scope-normal {
+        }
+        > .scope-align-left {
+            margin-left: calc(-50vw + 427px + 1rem);
+        }
+        > .scope-align-right {
+            margin-left: 0;
+            width: calc(50vw + 427px - 1rem);
+        }
+        > .scope-safe-full {
+            margin-left: calc(-50vw + 427px + 1rem);
+            width: calc(100vw - 2rem);
+        }
+        > .scope-full {
+            margin-left: calc(-50vw + 427px);
+            width: 100vw;
+        }
+    }
+}
+
+:not([class~="fragment"]) + .fragment {
+    margin-top: 1.2rem;
+}

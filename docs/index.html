@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hugo theme Heysiter Document</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="description" content="Description">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/vue.css"> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css">
+        <style>.markdown-section tr:nth-child(2n) {background-color:#0000 !important;}</style>
+    </head>
+    <body>
+        <div id="app">加载中</div>
+        <script>
+            window.$docsify = {
+                            name: 'Fragment',
+                            repo: 'qbeenslee/hugo-theme-fragment',
+                            loadSidebar: true,
+                            //subMaxLevel: 2,
+                            themeColor: 'seagreen',
+                            homepage: '',
+                            auto2top: true,
+                            el: '#app',
+                            pagination: {
+                                            previousText: '上一章节',
+                                            nextText: '下一章节',
+                                            crossChapter: true,
+                                            crossChapterText: true,
+                                        },
+                            copyCode: {
+                                            // buttonText : 'buttonText:String',
+                                            // errorText : 'errorText:String',
+                                            // successText: 'successText:String'
+
+                                            buttonText: {
+                                                            '/': '点击复制',
+                                                        },
+                                            errorText: {
+                                                            '/': '错误',
+                                                        },
+                                            successText: {
+                                                            '/': '复制',
+                                                        }
+                                        }
+                        }
+        </script>
+        <!-- Docsify v4 -->
+        <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+        <script src="https://unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+        <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
+    </body>
+</html>

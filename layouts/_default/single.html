@@ -1,0 +1,26 @@
+{{ define "main" }}
+    {{- $modes := split "light/dark/black" "/" -}}
+    {{- $mode := partial "variable/dataMode" . -}}
+    {{- $setMode :=  and (ne $mode "") (in $modes $mode) -}}
+    <div class="horizontal-safe {{ if (partial "variable/hasBanner" .) }}vertical-safe-covered{{ else }}vertical-safe{{ end  }}">
+        <div class="page-wrapper">
+            <div class="middle-side">
+                <article>
+                    {{ partial "page/article-header" . }}
+                    <div class="content" id="content"{{if $setMode }} data-mode="{{ $mode }}"{{ end }}>
+                        {{ .Scratch.Get "content" }}
+                        {{ partial "page/article-copyright" . }}
+                    </div>
+                </article>
+                {{ partial "plugins/related" . }}
+                {{ partial "plugins/pagination" . }}
+            </div>
+            {{ partial "plugins/toc" . }}
+        </div>
+        {{ partial "plugins/comment" . }}
+    </div>
+{{ end }}
+
+{{ define "main-tag" }}{{if in (split "light/dark/black" "/") .Params.themeColor}}style="background-color: var(--bg)"{{else if .Params.themeColor}}style="background-color:{{.Params.themeColor|safeCSS}};"{{else}}style="background-color: var(--bg)"{{end}} class="{{ partial "variable/pageType" . }}" {{if and .Site.Params.Plugins.capture (not (in .Params.hide "capture"))}}id="save-article-as-img"{{end}}{{ end }}
+
+{{ define "body-tag"}}style="background-color:{{ if .Params.bodyColor }}{{.Params.bodyColor | safeCSS}}{{ else if (partial "variable/hasBanner" .) }}#F2F2F2{{ else }}white{{ end }};" {{ if or .Params.toc (and .Site.Params.toc (ne .Params.toc false)) }}data-spy="scroll" data-target="#content-toc-tree" data-offset="90"{{ end }}{{ end }}

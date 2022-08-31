@@ -1,0 +1,11 @@
+{{ define "main" }}
+    <div class="horizontal-safe {{ if (partial "variable/hasBanner" .) }}vertical-safe-covered{{ else }}vertical-safe{{ end  }}">
+        <div class="container">
+            <article>
+                {{ partial "page/article-header" . }}
+                <div class="content" id="content">{{ .Scratch.Get "content"}}</div>
+            </article>
+        </div>
+        {{partial "plugins/comment" . }}
+    </div>
+{{ end }}

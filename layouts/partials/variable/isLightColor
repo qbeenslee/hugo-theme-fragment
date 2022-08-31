@@ -1,0 +1,44 @@
+<!-- support "#FFFFFF, rab(11,22,33)", default return is ture, light --->
+
+{{ $cssColor := lower (trim .color " ") }}
+{{ $outCSS := newScratch }}
+{{ $fixedModes := split "black,dark,light" "," }}
+<!-- convert all forms to [FF,FF,FF,FF] -->
+{{ if hasPrefix $cssColor "rgb" }}
+    {{ $out := slice }}
+    {{ $formed := $cssColor | replaceRE "rgb\\(\\s*(\\d{1,3})\\s*,\\s*(\\d{1,3})\\s*,\\s*(\\d{1,3})\\s*\\)" "$1,$2,$3" }}
+    {{ range $i, $c := split $formed "," }}
+       {{ $out = $out | append (int $c)}}
+    {{ end }}
+    {{- $outCSS.Set "numberColor" $out -}}
+{{ else if hasPrefix $cssColor "#" }}
+    {{ $convMap := dict "0" 0 "1" 1 "2" 2 "3" 3 "4" 4 "5" 5 "6" 6 "7" 7 "8" 8 "9" 9 "a" 10 "b" 11 "c" 12 "d" 13 "e" 14 "f" 15 }}
+    {{ $val := 0 }}
+    {{ $out := slice }}
+    {{ range $i, $c := split (substr $cssColor 1) "" }}
+        {{ $mod := mod $i 2 }}
+        {{ $dec := index $convMap $c }}
+        {{ $val = add $val ( mul $dec ( cond (eq $mod 0) 16 1 ) ) }}
+        {{ if $mod }}
+            {{ $out = $out | append $val}}
+            {{ $val = 0}}
+        {{end}}
+    {{ end }}
+    {{- $outCSS.Set "numberColor" $out -}}
+{{ else if in $fixedModes $cssColor }}
+    {{ if eq $cssColor "light" }}
+        {{ $outCSS.Set "numberColor" (split "255,255,255" ",") }}
+    {{ else }}
+        {{ $outCSS.Set "numberColor" (split "00,00,00" ",") }}
+    {{ end }}
+{{ else }}
+    {{- $outCSS.Set "numberColor" (split "255,255,255" ",") -}}
+{{ end }}
+
+{{ $numberColor := $outCSS.Get "numberColor" }}
+{{ $r :=int (index $numberColor 0) }}
+{{ $g :=int (index $numberColor 1) }}
+{{ $b :=int (index $numberColor 2) }}
+
+{{ $grayLevel := div (add (add (mul $r 299) (mul $g 587)) (mul $b 114)) 1000 }}
+{{ return (ge $grayLevel 192) }}

@@ -1,0 +1,2 @@
+{{- $diyBanner := .Page.Scratch.Get "bannerContent" -}}
+{{return and (or $diyBanner .Params.banner) (not (in .Params.hide "banner"))}}

@@ -1,0 +1,7 @@
+{{- if and (and .Site.Params.Plugins.darkmode (not (in .Params.hide "darkmode"))) (not (in (split "light/dark/black" "/") .Params.themeColor)) -}}
+    <div class="nav-item" title="{{ T "darkmode" }}">
+        <div class="nav-with-shadow nav-color-subject">
+            <i onclick="toggleDarkmode()" class="icon large" id="darkmode-switcher"></i>
+        </div>
+    </div>
+{{- end -}}

@@ -1,0 +1,11 @@
+{{- $isSetPhotoPopup := not (in .Params.hide "photoPopup")  -}}
+{{- $isSetGlobalPhotoPopup := eq (printf "%T" .Site.Params.plugins.photoPopup ) "bool" -}}
+{{ $openPhotoPopup := newScratch }}
+{{- if $isSetPhotoPopup -}}
+    {{ $openPhotoPopup.Set "openPhotoPopup" $isSetPhotoPopup }}
+{{- else if $isSetGlobalPhotoPopup -}}
+    {{ $openPhotoPopup.Set "openPhotoPopup" $isSetGlobalPhotoPopup }}
+{{- else -}}
+    {{ $openPhotoPopup.Set "openPhotoPopup" false }}
+{{- end -}}
+{{ return $openPhotoPopup.Get "openPhotoPopup" }}

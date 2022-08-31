@@ -1,0 +1,91 @@
+// details summary {
+//     cursor: pointer;
+//     color: #848484;
+//     font-size: 0.85rem;
+// }
+//
+// details {
+//     display: block;
+//     margin-top: 1rem;
+//     margin-bottom: 1rem;
+//     border: 1px solid var(--block-light);
+//     // border-radius: 0.25rem;
+//     overflow: hidden;
+//
+//     & *:not(:first-child) {
+//         padding: 0.25rem 1rem 0.25rem 1rem;
+//     }
+//
+//     summary {
+//         background-color: var(--block-light);
+//         padding: 0.5rem 1rem;
+//         cursor: pointer;
+//         color: var(--text);
+//
+//         &:after {
+//             // content: "↕"; // ↕
+//         }
+//     }
+// }
+
+details {
+    position: relative;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    max-height: 2.5em !important;
+    transition: all 0.1s ease;
+    ::-webkit-details-marker {
+        display: none;
+    }
+    & > summary {
+        font-size: 0.85em;
+        position: relative;
+        margin-top: 0.25em;
+        color: var(--link);
+        padding: 0.25rem 0.25rem;
+        background: var(--block-similar);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer !important;
+    }
+    & > summary:before {
+        content: "⊞";
+        color: var(--link);
+        font-size: 1em;
+        margin-right: 0.25em;
+        font-family: monospace;
+    }
+    &[open] > summary {
+        background: var(--link);
+        color: var(--similar);
+        &:before {
+            content: "⊟";
+            color: var(--similar);
+            font-family: monospace;
+        }
+    }
+}
+
+.folder {
+    margin: 0 0 0.5em 0.86em;
+    padding: 0.5em 0em 0.5em 1.5em;
+    border-left: 0.1em var(--border-clear) dotted;
+    border-bottom: 0.1em var(--border-clear) dotted;
+
+    p {
+        margin: 0;
+    }
+}
+
+details[open] {
+    height: auto;
+    max-height: 99em !important;
+    transition: all 1.2s ease;
+}
+details:not([open]) .folder {
+    height: 0px !important;
+}

@@ -1,0 +1,88 @@
+.switcher-wrapper {
+    font-family: SF Pro SC, SF Pro Display, SF Pro Icons, PingFang SC, Helvetica Neue, Helvetica, Arial, sans-serif; //ProximaNova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    // border: 1px solid var(--border-clear);
+    // border-radius: 0.25rem;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+
+    input.toggle {
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        opacity: 0;
+        position: absolute;
+    }
+
+    .switcher-content {
+        order: 999;
+        width: 100%;
+        padding: 1rem;
+        display: none;
+        // opacity: 0;
+        // border-top: 1px solid var(--border-light);
+    }
+
+    label {
+        // display: inline-block;
+        display: inline;
+        cursor: pointer;
+        // line-height: 1.21875;
+        // line-height: 1;
+        vertical-align: bottom;
+        font-size: 1rem;
+        letter-spacing: 0.004em;
+        height: auto;
+        color: var(--text-content);
+    }
+
+    .separator {
+        line-height: 1.21875;
+        font-size: 1.2rem;
+        letter-spacing: 0.004em;
+        display: inline-block;
+        margin: 0 4px;
+    }
+
+
+    input[type="radio"] + label {
+        // font-size: 0.75rem;
+        // line-height: 20px;
+        text-transform: uppercase;
+        line-height: 1.5;
+        // transition: color 0.1s ease-in-out;
+        // border-bottom: 1px solid var(--border-light);
+
+        &:hover {
+            text-decoration: underline;
+            // color: var(--text-tip);
+        }
+    }
+
+    input[type="radio"]:checked + label {
+        // border-bottom: 2px solid var(--link);
+        color: var(--text);
+        font-weight: 600;
+        transition: 0.25s ease;
+        font-size: 1.2rem;
+        line-height: 1;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    input[type="radio"]:checked + label + .switcher-content {
+        display: block;
+        opacity: 1.21875;
+        // transition: 0.25s ease;
+    }
+
+    input[type="radio"]:focus + label {
+        outline-style: auto;
+        outline-color: currentColor;
+        outline-color: -webkit-focus-ring-color;
+    }
+}
