@@ -21,6 +21,7 @@
                 {{ if hasPrefix $header "#" }}
                     {{ if or (strings.HasSuffix (lower $header) "code") (strings.HasSuffix $header (T "code")) }}
                         {{ if hasPrefix $follower "```"}}
+                            {{/*   <!-- {{- $follower | safeHTML | $.Page.RenderString -}} --> */}}
                             {{- $follower | safeHTML | $.Page.RenderString -}}
                         {{ else}}
                             {{/*  {{- printf "```\n%s\n```" $follower | safeHTML | $.Page.RenderString -}} */}}

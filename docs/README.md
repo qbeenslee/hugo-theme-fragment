@@ -1,10 +1,12 @@
 # Fragment
 
-一个高度可自定义的Hugo主题
+一个基于页面碎片高度可自定义的Hugo主题
 
 
 >  [ Hugo](https://gohugo.io)是基于GO的高效静态站点生成框架. 简洁, 高效.
-
+>
+>  本主题名称的来源于核心组件 [`shortcodes/fragment`](shortcodes/fragment.md), 熟练使用它可以编写出高度自定义的页面.
+>
 ## 安装
 
 在你的博客根目录下执行

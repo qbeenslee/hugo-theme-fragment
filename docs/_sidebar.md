@@ -15,8 +15,8 @@
     - [评论](customize/social-comments.md)
 
 - shortcodes
-    - [banner](shortcodes/banner.md)
     - [fragment](shortcodes/fragment.md)
+    - [banner](shortcodes/banner.md)
     - [switcher](shortcodes/switcher.md)
     - [map](shortcodes/map.md)
     - [friend](shortcodes/friend.md)
