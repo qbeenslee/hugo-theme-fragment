@@ -16,7 +16,6 @@
     > .scope-normal,
     > .scope-full,
     > .scope-safe-full {
-
         .fragment-cell ~ .fragment-cell {
             margin-left: 2rem;
             > figure {
@@ -54,6 +53,34 @@
             margin-left: calc(-50vw + 427px);
             width: 100vw;
         }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        display: inline-block;
+        vertical-align: bottom;
+    }
+    h1 {
+        line-height: 1.2 !important;
+    }
+    h2 {
+        line-height: 1.7 !important;
+    }
+    h3 {
+        line-height: 1.8 !important;
+    }
+    h4 {
+        line-height: 1.85 !important;
+    }
+    h5 {
+        line-height: 1.9 !important;
+    }
+    h6 {
+        line-height: 2 !important;
     }
 }
 

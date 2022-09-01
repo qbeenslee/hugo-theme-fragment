@@ -24,6 +24,7 @@
 {{- $isFixedMode := or (in $MODES $innerMode) (in $MODES $pageMode) -}}
 {{- $mode := cond $isFixedMode (cond (in $MODES $innerMode) $innerMode $pageMode) "light" -}}
 {{- $fullScType := .Scratch.Get "fragment-type" -}}
+{{/* TODO : fixed mode in free mode page */}}
 {{- $originalStyle := .Scratch.Get "fragment-style" -}}
 {{- $isFixedStyle := ne $originalStyle "" -}}
 {{- $style := cond $isFixedStyle $originalStyle (cond (in $NOT_LIGHT_MODES $mode ) "background:transparent;" "background:transparent;")  -}}

@@ -54,7 +54,8 @@ hr {
 
 h1 {
     font-size: 5rem;
-    line-height: 1.2;  letter-spacing: -.1rem;
+    line-height: 1.2;
+    letter-spacing: -0.1rem;
 
     + h2 {
         margin-top: 1.5rem;
@@ -67,7 +68,8 @@ h1 {
 
 h2 {
     font-size: 1.6rem;
-    line-height: 1.25; letter-spacing: -.1rem;
+    line-height: 1.25;
+    letter-spacing: -0.1rem;
 
     + h3 {
         margin-top: 1.5rem;
@@ -80,7 +82,8 @@ h2 {
 
 h3 {
     font-size: 1.4rem;
-    line-height: 1.3;  letter-spacing: -.1rem;
+    line-height: 1.3;
+    letter-spacing: -0.1rem;
 
     + h4 {
         margin-top: 1.5rem;
@@ -93,7 +96,8 @@ h3 {
 
 h4 {
     font-size: 1.2rem;
-    line-height: 1.35; letter-spacing: -.08rem;
+    line-height: 1.35;
+    letter-spacing: -0.08rem;
 
     + h5 {
         margin-top: 1.5rem;
@@ -106,7 +110,8 @@ h4 {
 
 h5 {
     font-size: 1.1rem;
-    line-height: 1.5;  letter-spacing: -.05rem;
+    line-height: 1.5;
+    letter-spacing: -0.05rem;
 
     + h6 {
         margin-top: 1.5rem;
@@ -119,7 +124,8 @@ h5 {
 
 h6 {
     font-size: 1rem;
-    line-height: 1.6;  letter-spacing: 0;
+    line-height: 1.6;
+    letter-spacing: 0;
 
     + * {
         margin-top: 0.625rem;
@@ -135,3 +141,19 @@ h6::before {
     color: $color_bombay_approx;
     font-weight: 700;
 }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//     h1,
+//     h2,
+//     h3,
+//     h4,
+//     h5,
+//     h6 {
+//         display: inline-block;
+//     }
+// }

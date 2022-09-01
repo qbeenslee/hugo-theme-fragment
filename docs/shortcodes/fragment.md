@@ -12,7 +12,7 @@
 #### mode
 
 **定义**: string, 控制文字的颜色模式<br/>
-**取值**: light/dark/black, 默认为则为取前页面的 `themeColor`
+**取值**: light/dark/black, 默认为则为取前页面的 `themeColor`
 
 > light, 文字为黑色; dark/black, 文字为白色
 

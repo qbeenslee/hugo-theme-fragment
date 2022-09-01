@@ -53,6 +53,11 @@ a {
 b,
 strong {
     font-weight: bold;
+    color: var(--text-content);
+}
+
+span,div {
+    color: var(--text-content);
 }
 
 .title {
