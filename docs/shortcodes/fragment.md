@@ -4,7 +4,7 @@
 
 `fragment` shortcode是本主题排版的核心组件, 通过对内容的横向排版控制可增加更多的自由度.
 
-**设计理念**: markdown缺乏横向排版的渲染能力, 出于这个考虑开发了`fragment`. `fragment`通过 `<--->` 这个标识符来分割内部markdown文本成独立的渲染单元, 再通过`type参数`控制`fragment`整体在页面里的横向宽度和位置.  `fragment` 还通过其他参数丰富排版能力. 
+**设计理念**: markdown缺乏横向排版的渲染能力, 为解决这个痛点，设计并开发了`fragment`. `fragment`通过 `<--->` 这个标识符来分割内部markdown文本成独立的渲染单元, 再通过`type参数`控制`fragment`整体在页面里的横向宽度和位置.  `fragment` 还通过其他参数丰富排版能力. 
 
 ## 配置
 
