@@ -2,8 +2,9 @@
 
 ## 说明
 
-`fragment` shortcode是本主题排版的核心组件, 通过对内容的横向排版控制可增加更多的自由度
-可以通过 `<--->` 分割各块碎片.
+`fragment` shortcode是本主题排版的核心组件, 通过对内容的横向排版控制可增加更多的自由度.
+
+**设计理念**: markdown缺乏横向排版的渲染能力, 出于这个考虑开发了`fragment`. `fragment`通过 `<--->` 这个标识符来分割内部markdown文本成独立的渲染单元, 再通过`type参数`控制`fragment`整体在页面里的横向宽度和位置.  `fragment` 还通过其他参数丰富排版能力. 
 
 ## 配置
 
@@ -12,14 +13,14 @@
 #### mode
 
 **定义**: string, 控制文字的颜色模式<br/>
-**取值**: light/dark/black, 默认为则为取前页面的 `themeColor`
+**取值**: **light/dark/black**, 默认为则为取前页面的 `themeColor`
 
 > light, 文字为黑色; dark/black, 文字为白色
 
 #### type
 
 **定义**: string, 用于控制控件整体布局<br/>
-**取值**: wrap/align-left/align-right/match/normal/safe-full/full, 默认为normal
+**取值**: **wrap/align-left/align-right/match/normal/safe-full/full**, 默认为normal
 
 
 #### style
