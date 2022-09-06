@@ -1,4 +1,4 @@
-# 关联文章 / Related
+# 关联文章 (Related)
 
 ## 示例
 

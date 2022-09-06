@@ -1,4 +1,4 @@
-# 评论 / Comments
+# 评论 (Comments)
 
 <img src="https://raw.githubusercontent.com/qbeenslee/CDN/master/screenshot/2022/04-27/050840738-20220427050832.png" width="500px">
 

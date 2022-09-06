@@ -1,4 +1,4 @@
-# 暗黑模式 / Darkmode
+# 暗黑模式 (Darkmode)
 
 ## 示例
 
