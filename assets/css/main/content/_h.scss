@@ -6,7 +6,6 @@ h5,
 h6 {
     word-break: break-all;
     overflow-wrap: break-word;
-    // line-height: 1.25;
     color: var(--text-title);
     font-weight: 700;
     font-family: $font-family-content-h;
@@ -15,18 +14,18 @@ h6 {
         margin-top: 0.5rem;
     }
 }
-div:not([class~="content"]) {
-    > h1,
-    > h2 {
-        font-weight: 600;
-    }
-    > h3,
-    > h4,
-    > h5,
-    > h6 {
-        font-weight: 400;
-    }
-}
+// div:not([class~="content"]) {
+//     > h1,
+//     > h2 {
+//         font-weight: 600;
+//     }
+//     > h3,
+//     > h4,
+//     > h5,
+//     > h6 {
+//         font-weight: 400;
+//     }
+// }
 
 *:not(br) {
     + h2,
@@ -131,29 +130,3 @@ h6 {
         margin-top: 0.625rem;
     }
 }
-
-h1::before,
-h2::before,
-h3::before,
-h4::before,
-h5::before,
-h6::before {
-    color: $color_bombay_approx;
-    font-weight: 700;
-}
-
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//     h1,
-//     h2,
-//     h3,
-//     h4,
-//     h5,
-//     h6 {
-//         display: inline-block;
-//     }
-// }

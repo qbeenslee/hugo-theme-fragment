@@ -1,4 +1,4 @@
-# 横幅 / Banner
+# 横幅 (Banner)
 
 Banner在本主题代码中占了很大篇幅去编写, 使用好banner会为你的文章锦上添花.
 

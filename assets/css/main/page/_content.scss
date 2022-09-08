@@ -1,0 +1,19 @@
+#content {
+    color: var(--text-content);
+    transition: color 1s ease;
+    margin: 2rem 0 2.25rem 0;
+
+    // > h1::before,
+    // > h2::before,
+    // > h3::before,
+    // > h4::before,
+    // > h5::before,
+    // > h6::before {
+    //     content: "#";
+    //     font-size: 0.85em;
+    //     color: var(--link);
+    //     opacity: 0.85;
+    //     font-weight: 700;
+    //     margin-right: 0.15em;
+    // }
+}

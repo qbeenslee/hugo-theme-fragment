@@ -56,7 +56,7 @@ strong {
     color: var(--text-content);
 }
 
-span,div {
+span,div[class~="map-box"] {
     color: var(--text-content);
 }
 

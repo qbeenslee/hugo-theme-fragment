@@ -1,8 +1,8 @@
 .content {
     @import "content/base";
+    @import "content/h";
     @import "content/p";
     @import "content/list";
-    @import "content/h";
     @import "content/table";
     @import "content/code";
     @import "content/footnote";
@@ -14,11 +14,6 @@
     @import "content/details";
 }
 
-#content {
-    color: var(--text-content);
-    transition: color 1s ease;
-    margin: 2rem 0 2.25rem 0;
-}
 
 // Title with '#' anchor
 // #page .content {
