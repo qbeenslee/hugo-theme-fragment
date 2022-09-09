@@ -31,6 +31,10 @@
         .pagination-item-title {
             font-size: 1.2em;
             font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         .pagination-item-label {
