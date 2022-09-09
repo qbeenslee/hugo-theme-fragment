@@ -8,6 +8,7 @@
     {{- .Scratch.Set "fragment-data-mode" (default "" (.Get "mode")) -}}
     {{- .Scratch.Set "fragment-type" (default "normal" (.Get "type")) -}}
     {{- .Scratch.Set "fragment-style" (default "" (.Get "style")) -}}
+    {{- .Scratch.Set "fragment-flex" (default "" (.Get "flex")) -}}
 {{- else if in $MODES $index0Value -}}
     {{- .Scratch.Set "fragment-data-mode" (default "" (.Get 0)) -}}
     {{- .Scratch.Set "fragment-type" (default "normal" (.Get 1)) -}}
@@ -22,10 +23,12 @@
 {{- $mode := cond $isFixedMode (cond (in $MODES $innerMode) $innerMode $pageMode) "light" -}}
 {{- $fragmentType := .Scratch.Get "fragment-type" -}}
 {{/* TODO : fixed mode in free mode page */}}
-{{- $originalStyle := .Scratch.Get "fragment-style" -}}
+{{- $originalStyle := default "" (.Scratch.Get "fragment-style") -}}
 {{- $isFixedStyle := ne $originalStyle "" -}}
 {{- $style := cond $isFixedStyle $originalStyle (cond (in $NOT_LIGHT_MODES $mode ) "background:transparent;" "background:transparent;")  -}}
-{{- $isWrap := eq $fragmentType "wrap" -}}
+{{- $flex := .Scratch.Get "fragment-flex" -}}
+{{- $flexCSS := cond (ne $flex "") (printf "flex:%s" $flex) "" -}}
+{{- $isWrap := and (eq $fragmentType "wrap") (ne $flex "") -}}
 
 {{- $scopeType := cond (in $TYPES $fragmentType) $fragmentType "normal" -}}
 <section class="fragment">
@@ -35,15 +38,15 @@
                 <div class="fragment-style"{{with $style}} style="{{. | safeCSS}}"{{end}}>
                     <div class="flex {{ if $isWrap }}flex-wrap{{ end }}">
                         {{ range split .Inner "<--->" }}
-                            <div class="fragment-cell{{ if $isWrap }} flex-auto-wrap{{ else }} flex-auto-fixed{{ end }}">
+                            <div {{ if $isWrap }} class="fragment-cell flex-auto-wrap"{{else if (ne $flexCSS "")}}class="fragment-cell" style="{{$flexCSS | safeCSS | safeHTML}};"{{ else }}class="fragment-cell flex-auto-fixed"{{ end }}>
                                 {{ . | safeHTML | $.Page.RenderString }}
                             </div>
                         {{ end }}
                     </div>
                 </div>
             {{- else -}}
-                <div class="fragment-style"{{with $style}} style="{{. | safeCSS}}"{{end}}>
-                    <div class="fragment-cell">
+                <div class="flex fragment-style"{{with $style}} style="{{. | safeCSS}}"{{end}}>
+                    <div class="fragment-cell" {{with $flexCSS}} style="{{. | safeCSS}};"{{end}}>
                         {{ .Inner | $.Page.RenderString }}
                     </div>
                 </div>

@@ -28,13 +28,6 @@
 **定义**: string, 使用html style设置控件的背景样式<br/>
 **取值**: text, 默认为空
 
-#### wrap
-
-**定义**: boolean, 对各个部分的对齐方式是否为`wrap`<br/>
-**取值**: true, 默认为false
-
-> true, **按照内容**大小对各个分割部分进行横向排版; <br/>false, 对各个分割部分横向**均等排版**
-
 ### 格式 
 
 **1.NamedParams模式**
@@ -57,12 +50,12 @@
 {{/<fragment>}}
 ```
 
-**3.四参数模式**
+**3.三参数模式**
 
-> 按位次, 三个参数依次为: mode,type, style, wrap-content
+> 按位次, 三个参数依次为: mode,type, style
 
 ```
-{{<fragment light full "#000" false >}}
+{{<fragment light full "#000">}}
     // 内容
 {{/<fragment>}}
 ```
