@@ -30,9 +30,9 @@
     > .scope-safe-full {
         .fragment-cell:not(:last-child)  {
             margin-right: 2rem;
-            > figure {
-                float: right;
-            }
+            // > figure, > figure img {
+            //     float: right;
+            // }
         }
     }
 
