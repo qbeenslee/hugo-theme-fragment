@@ -35,14 +35,7 @@ h6 {
     margin: 1.5em 0 1.5em 0;
 }
 
-blockquote {
-    padding: 0 10px;
-    border-left: 4px solid var(--border-divide);
-    margin: 0.5em 0 1em 0;
-    font-style: italic;
-    color: var(--text-suammary);
-    display: inline-block;
-
+> blockquote {
     &:first-child {
         font-style: italic;
         border-left: none;
@@ -72,6 +65,15 @@ blockquote {
             position: absolute;
         }
     }
+}
+
+blockquote {
+    padding: 0 10px;
+    border-left: 4px solid var(--border-divide);
+    margin: 0.5em 0 1em 0;
+    font-style: italic;
+    color: var(--text-suammary);
+    display: inline-block;
 
     > p {
         font-size: 0.875rem;

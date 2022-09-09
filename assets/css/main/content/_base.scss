@@ -27,10 +27,13 @@ strong,
 summary,
 time,
 var,
-video {
+video,
+span,div{
     letter-spacing: 0.0187rem;
     line-height: 1.6;
+    color: var(--text-content);
     font-family: $font-family-content-p;
+    font-size: 0.9375rem;
 }
 
 a {
@@ -53,10 +56,6 @@ a {
 b,
 strong {
     font-weight: bold;
-    color: var(--text-content);
-}
-
-span,div{
     color: var(--text-content);
 }
 
