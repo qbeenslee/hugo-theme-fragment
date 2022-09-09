@@ -5,9 +5,11 @@
     {{- $mapWidth := default "100%" (.Get "w") -}}
     {{- $mapHeight := default "360px" (.Get "h") -}}
     {{- $mapDisplayZoom := default false (.Get "displayZoom") -}}
-    <div class="map-box">
-        <div id="map-lon{{$mapLon}}-lat{{$mapLat}}" style="max-width:{{$mapWidth}};height:{{$mapHeight}};"></div>
-    </div>
+    <section class="map">
+        <div class="map-box">
+            <div id="map-lon{{$mapLon}}-lat{{$mapLat}}" style="max-width:{{$mapWidth}};height:{{$mapHeight}};"></div>
+        </div>
+    </section>
     <script>
         var mymap = L.map('map-lon{{$mapLon}}-lat{{$mapLat}}', { attributionControl:false ,zoomControl: {{$mapDisplayZoom}} }).setView([{{$mapLat}},{{$mapLon}}], {{ if .Get "zoom" }}{{ int (.Get "zoom") }}{{ else }}16{{ end }});
         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);

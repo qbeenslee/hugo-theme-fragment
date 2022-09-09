@@ -11,13 +11,25 @@
         }
     }
 
+    // > .scope-wrap,
+    // > .scope-match,
+    // > .scope-normal,
+    // > .scope-full,
+    // > .scope-safe-full {
+    //     .fragment-cell ~ .fragment-cell {
+    //         margin-left: 2rem;
+    //         > figure {
+    //             float: right;
+    //         }
+    //     }
+    // }
     > .scope-wrap,
     > .scope-match,
     > .scope-normal,
     > .scope-full,
     > .scope-safe-full {
-        .fragment-cell ~ .fragment-cell {
-            margin-left: 2rem;
+        .fragment-cell:not(:last-child)  {
+            margin-right: 2rem;
             > figure {
                 float: right;
             }

@@ -3,6 +3,6 @@
 }
 
 .leaflet-pane,
-.leaflet-map-pane {
-    color: black;
+.leaflet-map-pane *{
+    color: black !important;
 }

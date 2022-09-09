@@ -46,15 +46,16 @@
     max-width: 100%;
 }
 .flex-auto-wrap {
-    @include flex(1, 0, 0%);
+    @include flex(0, 0, auto);
+    // @include flex(0, 0, 0%);
     max-width: 100%;
 }
 
-@media screen and (max-width: $size_large_max) {
-    .flex-auto-wrap {
-        @include flex(1, 0, auto);
-    }
-}
+// @media screen and (max-width: $size_large_max) {
+//     .flex-auto-wrap {
+//         @include flex(0, 0, auto);
+//     }
+// }
 
 // Flex Flow Direction
 // - applies to: flex containers
