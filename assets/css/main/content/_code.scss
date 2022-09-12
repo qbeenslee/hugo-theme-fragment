@@ -27,7 +27,7 @@ pre {
 }
 pre[class~="code-tip"],
 pre[class~="code-info"],
-pre[class~="code-warming"],
+pre[class~="code-warning"],
 pre[class~="code-error"] {
     color: var(--text);
     border: none;
@@ -77,7 +77,7 @@ pre[class~="code-info"] {
         }
     }
 }
-pre[class~="code-warming"] {
+pre[class~="code-warning"] {
     background-color: rgba(255, 221, 102, 0.1);
     border-inline-start: 0.25rem solid #fd6;
 
