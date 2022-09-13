@@ -8,6 +8,7 @@
     - [横幅](customize/banner.md)
     - [菜单栏](customize/menu.md)
     - [搜索](customize/search.md)
+    - [警告](customize/admonition.md)
     - [图片](customize/picture.md)
     - [内容目录](customize/toc.md)
     - [关联文章](customize/related.md)
