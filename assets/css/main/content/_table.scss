@@ -2,12 +2,15 @@ table {
     border: 0;
     border-collapse: collapse;
     border-spacing: 0;
-    font-size: 0.8125rem;
     text-align: left;
     max-width: 100%;
     white-space: nowrap;
     overflow-x: scroll;
     padding-right: 2px;
+
+    *, & {
+        font-size: 0.8125rem;
+    }
 
     > tbody {
         tr {
