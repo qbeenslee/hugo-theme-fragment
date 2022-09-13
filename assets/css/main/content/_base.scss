@@ -1,5 +1,8 @@
+& {
+    font-size: 0.9375rem;
+}
+
 article,
-b,
 blockquote,
 caption,
 cite,
@@ -23,12 +26,12 @@ p,
 q,
 samp,
 section,
-strong,
+// strong,
 summary,
 time,
 var,
 video,
-span,div{
+span,div {
     letter-spacing: 0.0187rem;
     line-height: 1.6;
     color: var(--text-content);
@@ -55,8 +58,9 @@ a {
 
 b,
 strong {
+    font-family: inherit;
     font-weight: bold;
-    color: var(--text-content);
+    font-size: inherit;
 }
 
 .title {

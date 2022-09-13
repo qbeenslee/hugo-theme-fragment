@@ -1,3 +1,11 @@
+.table-wrapper,
+table,
+tbody,
+thead,
+tr {
+    font-size: inherit;
+}
+
 table {
     border: 0;
     border-collapse: collapse;
@@ -8,20 +16,20 @@ table {
     overflow-x: scroll;
     padding-right: 2px;
 
-    *, & {
-        font-size: 0.8125rem;
+    tbody tr:hover {
+        background-color: var(--block-similar);
     }
 
-    > tbody {
-        tr {
-            &:hover {
-                background-color: var(--block-similar);
-            }
-        }
+    th {
+        font-size: 0.8125em;
+        vertical-align: top;
+        padding: 6px 12px;
+        border: 1px solid var(--border-divide);
+        background-color: var(--block-light);
     }
 
     td {
-        font-size: 0.8125rem;
+        font-size: 0.8125em;
         vertical-align: top;
         padding: 6px 12px;
         border: 1px solid var(--border-divide);
@@ -30,19 +38,10 @@ table {
         height: 30px;
 
         * {
-            font-size: 0.8125rem;
+            // font-size: 0.8125em;
             @include word-wrap(break-word);
         }
     }
-
-    th {
-        font-size: 0.8125rem;
-        vertical-align: top;
-        padding: 6px 12px;
-        border: 1px solid var(--border-divide);
-        background-color: var(--block-light);
-    }
-
     &:not(:last-child) {
         margin-bottom: 12px;
     }

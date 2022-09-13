@@ -36,16 +36,16 @@ pre[class~="code-note"] {
     > .render-content,
     > code {
         padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-        *,
+
+        > *,
         & {
             font-size: 0.75rem;
         }
 
-        p, p + p {
+        p,
+        p + p {
             margin-top: 0.5rem;
         }
-
-        // white-space: break-spaces;
     }
 }
 section[class~="code-tip"],
@@ -104,4 +104,3 @@ pre[class~="code-note"] {
     border: 1px solid var(--block-light);
     border-radius: 1px;
 }
-
