@@ -26,11 +26,14 @@
 {{- $originalStyle := default "" (.Scratch.Get "fragment-style") -}}
 {{- $isFixedStyle := ne $originalStyle "" -}}
 {{- $style := cond $isFixedStyle $originalStyle (cond (in $NOT_LIGHT_MODES $mode ) "background:transparent;" "background:transparent;")  -}}
-{{- $flex := .Scratch.Get "fragment-flex" -}}
+
+{{- $flex := default "" (.Scratch.Get "fragment-flex") -}}
 {{- $flexCSS := cond (ne $flex "") (printf "flex:%s" $flex) "" -}}
-{{- $isWrap := and (eq $fragmentType "wrap") (ne $flex "") -}}
+
+{{- $isWrap := and (eq $fragmentType "wrap") (eq  $flex "") -}}
 
 {{- $scopeType := cond (in $TYPES $fragmentType) $fragmentType "normal" -}}
+
 <section class="fragment">
     <div class="fragment-wrap scope-{{ $scopeType }}">
         <div class="content{{ if $isFixedMode }} fixed-data-mode{{ end }}"{{ if $isFixedMode }} data-mode="{{ $mode | safeCSS }}"{{ end }}>
