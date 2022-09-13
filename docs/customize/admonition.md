@@ -1,4 +1,4 @@
-# 警告 (admonition)
+# 警告 (admonition)
 
 ## 示例
 
@@ -73,7 +73,7 @@
     普通codeblock只是将文字渲染成文本文字, 而它可以将内部的文字按markdown进行渲染, 甚至可以自己嵌套自己进行渲染(Hugo 0.93.0+).
     在Hugo 0.93.0以下版本, 本主题不具备以markdown进行渲染, 但是具有同样的样式.
     
-    > 由于API `RenderString` 在shortcode中不支持嵌套渲染 而在[Render Hooks for Code Blocks ](https://gohugo.io/templates/render-hooks/#render-hooks-for-code-blocks)中可以现实无限嵌套渲染, 所以赋予了codeblock更强大的能力
+    > 由于API `RenderString` 在shortcode中不支持嵌套渲染 而在[Render Hooks for Code Blocks ](https://gohugo.io/templates/render-hooks/#render-hooks-for-code-blocks)中可以现实无限嵌套渲染, 所以赋予了codeblock更强大的能力(不知道是不是bug, 反正先用着)
 
     
 
