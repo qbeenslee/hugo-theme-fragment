@@ -3,6 +3,10 @@
 {{ $body_background := cond (eq .Site.Params.Layout.listStyle "card") "#f4f4f4" "#ffffff" }}
 //inject
 $color_anchor: {{ $color_anchor }};
+$text_tip: "{{T "tip"}}";
+$text_info: "{{T "info"}}";
+$text_warning: "{{T "warning"}}";
+$text_erorr: "{{T "erorr"}}";
 
 :root, .content  {
     --color-mode: "light";

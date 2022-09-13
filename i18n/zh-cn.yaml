@@ -88,3 +88,14 @@
 - id: code
   translation: 代码
 
+- id : tip
+  translation: 提醒
+
+- id : info
+  translation: 信息
+
+- id : warning
+  translation: 警告
+
+- id : erorr
+  translation: 错误

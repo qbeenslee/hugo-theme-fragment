@@ -86,3 +86,14 @@
 - id: code
   translation: code
 
+- id : tip
+  translation: tip
+
+- id : info
+  translation: info
+
+- id : warning
+  translation: warning
+
+- id : erorr
+  translation: erorr

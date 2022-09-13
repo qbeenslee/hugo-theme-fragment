@@ -25,79 +25,95 @@ pre {
         font-family: $font_consolas, $font_monaco, $font_menlo, $font_monospace;
     }
 }
+
+section[class~="code-tip"],
+section[class~="code-info"],
+section[class~="code-warning"],
+section[class~="code-error"],
 pre[class~="code-tip"],
 pre[class~="code-info"],
 pre[class~="code-warning"],
 pre[class~="code-error"] {
+    font-style: normal;
     color: var(--text);
     border: none;
     margin: 0.25rem 0 1rem 0;
     padding: 0;
-    border-radius: 0.25rem;
-    display: inline-block;
+    display: table;
+    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    max-width: 100%;
     overflow: hidden;
-    // box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 
-    .prefix {
-        margin: 0 -0.75rem;
-        padding: 0.25rem 0.75rem 0.25rem 1.5rem;
+    > .prefix {
+        margin: 0;
+        padding: 0 0.5rem 0 0.5rem;
         font-weight: 800;
         display: block;
+
+        &:before {
+            font-family: Verdana;
+            font-weight: 800;
+            font-size: 0.65rem;
+        }
     }
 
-    code {
-        padding: 0.5rem 0.75rem 0.75rem 0.75rem;
-        white-space: break-spaces;
+    > .render-content,
+    > code {
+        padding: 0 0.5rem 0.25rem 0.5rem;
+        *,& {
+            font-size: 0.75rem;
+        }
+        // white-space: break-spaces;
     }
 }
+section[class~="code-tip"],
 pre[class~="code-tip"] {
-    color: var(--text-suammary);
-    background-color: rgba(0, 191, 165, 0.1);
-    border-inline-start: 0.25rem solid #00bfa5;
+    // color: var(--text-suammary);
+    background-color: rgba(27, 198, 215, 0.6);
+    border-inline-start: 0.25rem solid #005aaa;
 
-    .prefix {
-        background-color: rgba(0, 191, 165, 0.1);
-
+    > .prefix {
         &:before {
-            color: #00bfa5;
-            content: "Tip";
+            color: #005aaa;
+            content: $text_tip;
         }
     }
 }
+section[class~="code-info"],
 pre[class~="code-info"] {
-    background-color: rgba(102, 187, 255, 0.1);
-    border-inline-start: 0.25rem solid #6bf;
+    background-color: rgba(66, 185, 131, 0.1);
+    border-inline-start: 0.25rem solid #42b983;
 
-    .prefix {
-        background-color: rgba(68, 138, 255, 0.1);
-
+    > .prefix {
         &:before {
-            color: #448aff;
-            content: "Info";
+            color: #42b983;
+            content: $text_info;
         }
     }
 }
+section[class~="code-warning"],
 pre[class~="code-warning"] {
-    background-color: rgba(255, 221, 102, 0.1);
-    border-inline-start: 0.25rem solid #fd6;
+    background-color: rgba(252, 164, 96, 0.4);
+    border-inline-start: 0.25rem solid #ff7700;
 
-    .prefix {
-        background-color: rgba(255, 145, 0, 0.1);
+    > .prefix {
         &:before {
-            color: #ff9100;
-            content: "Warming";
+            color: #ff7700;
+            content: $text_warning;
         }
     }
 }
+section[class~="code-error"],
 pre[class~="code-error"] {
-    background-color: rgba(255, 102, 102, 0.1);
-    border-inline-start: 0.25rem solid #f66;
+    background-color: rgba(255, 98, 98, 0.45);
+    border-inline-start: 0.25rem solid #f00;
 
-    .prefix {
-        background-color: rgba(255, 23, 68, 0.1);
+    > .prefix {
         &:before {
-            color: #ff1744;
-            content: "Error";
+            color: #f00;
+            content: $text_erorr;
         }
     }
 }
