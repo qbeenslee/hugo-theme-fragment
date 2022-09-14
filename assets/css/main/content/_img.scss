@@ -4,8 +4,27 @@ img {
     // object-fit: contain;
     // height: auto;
     min-height: 1em;
+    border: 0;
     border-style: none;
-    // border-radius: 2px;
+
+    &[src$=".png"] {
+        background: #fff;
+    }
+}
+
+img[src$="#c"] {
+    display: block;
+    margin: 0.7rem auto;
+}
+
+img[src$="#l"] {
+    float: left;
+    margin: 0.7rem;
+}
+
+img[src$="#r"] {
+    float: right;
+    margin: 0.7rem;
 }
 
 p + img {
@@ -29,6 +48,6 @@ figure {
         margin-top: 5px;
         color: var(--text-tip);
         text-align: center;
-        font-size: .85em;
+        font-size: 0.85em;
     }
 }

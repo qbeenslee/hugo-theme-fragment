@@ -154,14 +154,6 @@ video {
     font-family: $font-family-base;
 }
 
-td {
-    vertical-align: middle;
-
-    img {
-        vertical-align: middle;
-    }
-}
-
 a {
     text-decoration: none;
     color: var(--text-title);
@@ -180,11 +172,6 @@ del {
     -moz-osx-font-smoothing: auto;
     -webkit-font-smoothing: auto;
     vertical-align: baseline;
-}
-
-th {
-    font-weight: 700;
-    vertical-align: bottom;
 }
 
 hr {
@@ -269,29 +256,6 @@ sup {
 
 sub {
     bottom: -0.25em;
-}
-
-/**
- * Remove border when inside `a` element in IE 8/9/10.
- */
-
-img {
-    border: 0;
-}
-
-img[src$="#c"] {
-    display: block;
-    margin: 0.7rem auto;
-}
-
-img[src$="#l"] {
-    float: left;
-    margin: 0.7rem;
-}
-
-img[src$="#r"] {
-    float: right;
-    margin: 0.7rem;
 }
 
 .selectable {

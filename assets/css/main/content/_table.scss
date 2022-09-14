@@ -22,7 +22,8 @@ table {
 
     th {
         font-size: 0.8125em;
-        vertical-align: top;
+        font-weight: 700;
+        vertical-align: middle;
         padding: 6px 12px;
         border: 1px solid var(--border-divide);
         background-color: var(--block-light);
@@ -30,7 +31,7 @@ table {
 
     td {
         font-size: 0.8125em;
-        vertical-align: top;
+        vertical-align: middle;
         padding: 6px 12px;
         border: 1px solid var(--border-divide);
         vertical-align: top;
@@ -41,7 +42,12 @@ table {
             // font-size: 0.8125em;
             @include word-wrap(break-word);
         }
+
+        img {
+            vertical-align: middle;
+        }
     }
+
     &:not(:last-child) {
         margin-bottom: 12px;
     }
