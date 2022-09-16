@@ -37,7 +37,31 @@ pre[class~="code-note"] {
     > code {
         padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 
-        > *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+        b,
+        blockquote,
+        caption,
+        cite,
+        details,
+        dl,
+        dt,
+        em,
+        figure,
+        i,
+        img,
+        kbd,
+        legend,
+        li,
+        object,
+        ol,
+        p,
+        pre,
+        q,
+        section,
+        strong,
+        summary,
+        time,
+        table,
+        ul,
         & {
             font-size: 0.75rem;
         }

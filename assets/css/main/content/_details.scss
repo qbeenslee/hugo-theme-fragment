@@ -35,6 +35,8 @@ details {
     overflow: hidden;
     max-height: 2.5em !important;
     transition: all 0.1s ease;
+    font-size: 0.85em;
+
     ::-webkit-details-marker {
         display: none;
     }
