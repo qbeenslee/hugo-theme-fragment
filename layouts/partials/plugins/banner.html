@@ -1,5 +1,5 @@
 {{- if not (in .Params.hide "banner") -}}
-    {{- $diyBanner := .Page.Scratch.Get "bannerContent" -}}
+    {{- $diyBanner := .Page.Store.Get "bannerContent" -}}
 
     {{- $bannerHeight := default "normal" (.Params.bannerHeight) -}}
     {{- .Page.Scratch.Set "bannerHeight" $bannerHeight -}}
@@ -7,7 +7,6 @@
         {{- $bannerHeight :="normal" -}}
         {{- .Page.Scratch.Set "bannerHeight" "normal" -}}
     {{- end -}}
-
 
     {{- if $diyBanner -}}
         {{- $diyBackground := index $diyBanner "style" -}}

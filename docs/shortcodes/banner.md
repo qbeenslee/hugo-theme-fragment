@@ -4,6 +4,8 @@
 
 `banner` shortcode是作为横幅配置的扩展使用的, 可以在已设置的Front Matter定义之外, 添加更加复杂的html内容
 
+> 该shortcode, 只应该最多使用一次
+
 ## 配置
 
 > 当使用`banner` shortcode后, md文件的Front Matter中关于banner的配置仅剩 `bannerHeight` 有效
