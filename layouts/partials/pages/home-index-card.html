@@ -4,19 +4,19 @@
 <div class="article-card-wrap">
     <a class="article-card" href="{{ .current.Permalink }}">
         {{- if (hasPrefix $articleThumbnail "http") -}}
-            <div class="card-thumbnail" style="background-image: url({{ $articleThumbnail | safeHTML}})">
+            <div class="card-thumbnail clearfix" style="background-image: url({{ $articleThumbnail | safeHTML}})">
                 <i class="icon circle white"></i>
             </div>
         {{- else if (hasPrefix .Params.banner "linear-gradient") -}}
-            <div class="card-color-thumbnail" style="background-image: {{ .current.Params.banner | safeCSS }};">
+            <div class="card-color-thumbnail clearfix" style="background-image: {{ .current.Params.banner | safeCSS }};">
                 <i class="icon circle white"></i>
             </div>
         {{- else if or (hasPrefix .current.Params.banner "rgb") (hasPrefix .current.Params.banner "#") -}}
-            <div class="card-color-thumbnail" style="background: {{ .current.Params.banner | safeCSS }};">
+            <div class="card-color-thumbnail clearfix" style="background: {{ .current.Params.banner | safeCSS }};">
                 <i class="icon circle white"></i>
             </div>
         {{- else -}} {{ $randomColor := index (shuffle .current.Site.Data.hey.color.thumbnails) 1}} {{- $thumbnailTitle := (partial "variable/thumbnailTitle" .current) | upper -}} {{- $thumbnailTitleCSS := cond (gt (len $thumbnailTitle) 6) "thumbnail-s" "thumbnail-n" -}}
-            <div class="card-color-thumbnail" style="background-image:{{ $randomColor | safeCSS }} ;">
+            <div class="card-color-thumbnail clearfix" style="background-image:{{ $randomColor | safeCSS }} ;">
                 <span class="thumbnail-title {{ $thumbnailTitleCSS }}">{{ $thumbnailTitle }}</span>
                 <i class="icon circle white"></i>
             </div>

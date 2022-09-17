@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     outline: none !important;
+    vertical-align: baseline;
     -moz-osx-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
     @include box-sizing(border-box);
@@ -76,12 +77,13 @@
         font-size: 14px;
     }
 }
-
-html {
+html,
+body {
+    margin: 0;
+    padding: 0;
     min-height: 100%;
     height: 100%;
     min-width: 300px;
-    margin: 0;
     position: relative;
     @include box-sizing(border-box);
     -moz-osx-font-smoothing: grayscale;
@@ -90,69 +92,79 @@ html {
     overflow-y: scroll;
     text-rendering: optimizeLegibility;
     vertical-align: baseline;
-}
-
-body {
-    min-height: 100%; //兼容foot的显示
-    height: 100%;
-    margin: 0;
-    position: relative;
-    padding: 0;
-    line-height: 1.428571428571429;
-}
-
-abbr,
-address,
-article,
-aside,
-audio,
-b,
-blockquote,
-body,
-body div,
-caption,
-cite,
-dd,
-del,
-details,
-dfn,
-dl,
-dt,
-em,
-fieldset,
-figure,
-form,
-header,
-html,
-i,
-iframe,
-img,
-ins,
-kbd,
-// label,
-legend,
-li,
-mark,
-menu,
-nav,
-object,
-ol,
-p,
-pre,
-q,
-samp,
-section,
-small,
-strong,
-summary,
-time,
-tr,
-ul,
-var,
-video {
-    vertical-align: baseline;
     font-family: $font-family-base;
 }
+
+// html {
+//         position: relative;
+//     @include box-sizing(border-box);
+//     -moz-osx-font-smoothing: grayscale;
+//     -webkit-font-smoothing: antialiased;
+//     overflow-x: hidden;
+//     overflow-y: scroll;
+//     text-rendering: optimizeLegibility;
+//     vertical-align: baseline;
+// }
+
+// body {
+//     min-height: 100%; //兼容foot的显示
+//     height: 100%;
+//     position: relative;
+//     line-height: 1.428571428571429;
+// }
+
+// abbr,
+// address,
+// article,
+// aside,
+// audio,
+// b,
+// blockquote,
+// body,
+// body div,
+// caption,
+// cite,
+// dd,
+// del,
+// details,
+// dfn,
+// dl,
+// dt,
+// em,
+// fieldset,
+// figure,
+// form,
+// header,
+// html,
+// i,
+// iframe,
+// img,
+// ins,
+// kbd,
+// // label,
+// legend,
+// li,
+// mark,
+// menu,
+// nav,
+// object,
+// ol,
+// p,
+// pre,
+// q,
+// samp,
+// section,
+// small,
+// strong,
+// summary,
+// time,
+// tr,
+// ul,
+// var,
+// video {
+//     vertical-align: baseline;
+//     font-family: $font-family-base;
+// }
 
 a {
     text-decoration: none;
@@ -165,23 +177,6 @@ a {
     &:hover {
         color: $color_tundora_approx;
     }
-}
-
-del {
-    text-decoration: line-through;
-    -moz-osx-font-smoothing: auto;
-    -webkit-font-smoothing: auto;
-    vertical-align: baseline;
-}
-
-hr {
-    height: 1px;
-    width: 100%;
-    border: 0;
-    border-top: 1px solid var(--border-divide);
-    transition: border-color 0.5s ease;
-    margin: 20px 0;
-    display: block;
 }
 
 input,

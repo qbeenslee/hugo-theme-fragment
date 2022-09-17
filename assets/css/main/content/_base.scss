@@ -1,5 +1,5 @@
 & {
-    //content default font size
+    // content default font size
     font-size: 0.9375rem;
 }
 
@@ -75,3 +75,22 @@ iframe {
 > iframe {
     margin: 10px 0;
 }
+
+del {
+    text-decoration: line-through;
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: auto;
+    vertical-align: baseline;
+}
+
+hr {
+    height: 1px;
+    width: 100%;
+    border: 0;
+    border-top: 1px solid var(--border-divide);
+    transition: border-color 0.5s ease;
+    margin: 20px 0;
+    display: block;
+}
+
+

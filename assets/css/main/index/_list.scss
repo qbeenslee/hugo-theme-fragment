@@ -32,15 +32,15 @@ article[class="home-list-normal"] {
                     color: var(--text-title);
                 }
             }
-
-            span {
-                font-weight: 300;
-            }
-
-            strong {
-                font-weight: 500;
-                color: inherit;
-            }
+            // 
+            // span {
+            //     font-weight: 300;
+            // }
+            // 
+            // strong {
+            //     font-weight: 500;
+            //     color: inherit;
+            // }
         }
 
         .subtitle {
@@ -50,17 +50,17 @@ article[class="home-list-normal"] {
             font-size: 0.75rem;
             color: var(--text-secondary);
 
-            em {
-                font-weight: 300;
-            }
-
-            span {
-                font-weight: 300;
-            }
-
-            strong {
-                font-weight: 500;
-            }
+            // em {
+            //     font-weight: 300;
+            // }
+            // 
+            // span {
+            //     font-weight: 300;
+            // }
+            // 
+            // strong {
+            //     font-weight: 500;
+            // }
         }
     }
 }
