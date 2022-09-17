@@ -6,10 +6,9 @@ img {
     min-height: 1em;
     border: 0;
     border-style: none;
-
-    &[src$=".png"] {
-        background: #fff;
-    }
+}
+> img[src$=".png"] {
+    background: #fff;
 }
 
 img[src$="#c"] {
