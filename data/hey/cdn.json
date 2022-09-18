@@ -1,22 +1,22 @@
 {
   "js": {
     "main": "/js/main.js",
-    "jquery": "https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js",
-    "jquery_lazyload": "https://cdn.bootcdn.net/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js",
+    "jquery": "https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.6.0.min.js",
+    "jquery_lazyload": "https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js",
     "leafle": "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.min.js",
-    "jquery_event_move": "https://cdn.bootcdn.net/ajax/libs/jquery.event.move/2.0.1/jquery.event.move.min.js",
-    "jquery_twentytwenty": "https://cdn.bootcdn.net/ajax/libs/mhayes-twentytwenty/2.0.0-beta.1/jquery.twentytwenty.min.js",
+    "jquery_event_move": "https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.1/jquery.event.move.min.js",
+    "jquery_twentytwenty": "https://cdnjs.cloudflare.com/ajax/libs/mhayes-twentytwenty/2.0.0-beta.1/jquery.twentytwenty.min.js",
     "medium_zoom":"https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js",
     "scrollspy": "/js/scrollspy.js",
     "jquery_smooth_scroll": "https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js",
     "load_echarts": "/js/load-echarts.js",
-    "echarts": "https://cdn.bootcdn.net/ajax/libs/echarts/5.1.0/echarts.min.js",
+    "echarts": "https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.3/echarts.min.js",
     "tags_cloud":"/js/jqcloud.js",
     "fuse":"https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js",
     "semantic_search":"/js/semantic-search.js",
     "darkmode":"/js/darkmode.js",
     "capture":"/js/html2canvas.js",
-    "mermaid":"https://cdn.bootcdn.net/ajax/libs/mermaid/8.11.2/mermaid.min.js"
+    "mermaid":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.7/mermaid.min.js"
   },
   "css": {
     "leafle": "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.min.css",
