@@ -7,10 +7,9 @@
             <div class="middle-side">
                 <article>
                     {{ partial "page/article-header" . }}
-                    <div class="content" id="content"{{if $setMode }} data-mode="{{ $mode }}"{{ end }}>
-                        {{ .Scratch.Get "content" }}
-                        {{ partial "page/article-copyright" . }}
-                    </div>
+<div class="content" id="content"{{if $setMode }} data-mode="{{ $mode }}"{{ end }}>{{ .Scratch.Get "content" }}
+{{ partial "page/article-copyright" . }}
+</div>
                 </article>
                 {{ partial "plugins/related" . }}
                 {{ partial "plugins/pagination" . }}

@@ -1,5 +1,5 @@
-<!-- <div class="highlight"> -->
-    <pre class="code-text">
-        <code data-lang="text">{{ .Inner | safeHTML }}</code>
-    </pre>
-<!-- </div> -->
+<!-- <pre class="code-text"> -->
+<!-- <code data-lang="text">{{ printf "%s\n" .Inner }} -->
+<!-- </code></pre> -->
+
+{{printf "<pre class=\"code-text\">\n<code data-lang=\"text\">%s\n</code></pre>" .Inner}}
