@@ -1111,7 +1111,7 @@
                         }
                         if (result[fields.image] !== undefined) {
                             if (result[fields.image] !== null) {
-                                html += "" + '<div class="image">' + ' <img  src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-original="' + result[fields.image] + '">' + "</div>";
+                                html += "" + '<div class="image">' + ' <img  src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="' + result[fields.image] + '">' + "</div>";
                             }
                         }
                         html += '<div class="content">';

@@ -2,7 +2,7 @@
   "js": {
     "main": "/js/main.js",
     "jquery": "https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.6.0.min.js",
-    "jquery_lazyload": "https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js",
+    "jquery_lazyload": "https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js",
     "leafle": "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.min.js",
     "jquery_event_move": "https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.1/jquery.event.move.min.js",
     "jquery_twentytwenty": "https://cdnjs.cloudflare.com/ajax/libs/mhayes-twentytwenty/2.0.0-beta.1/jquery.twentytwenty.min.js",

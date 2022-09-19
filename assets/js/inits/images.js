@@ -5,7 +5,11 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 
 /* Show an alert if this js file has been loaded twice */
 $(document).ready(function () {
-    $("main").find("img").not(".image-compare-item").lazyload();
+    // $("main").find("img").not(".image-compare-item").lazyload();
+    //
+    // lazyload();
+    var lazy_imgs = document.querySelectorAll("img");
+    lazyload(lazy_imgs);
 });
 
 $(document).ready(function () {
@@ -37,7 +41,7 @@ $(document).ready(function () {
         var $src = $img.attr("href"),
             $title = $img.attr("alt"),
             $msrc = $img.attr("src"),
-            $dataOriginal = $img.attr("data-original");
+            $dataOriginal = $img.attr("data-src");
 
         $(this).css("cursor", "zoom-in");
         if (($msrc == undefined || $msrc.startsWith("data:")) && $dataOriginal != undefined) {

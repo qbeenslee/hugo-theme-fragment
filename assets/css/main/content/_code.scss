@@ -4,7 +4,8 @@ pre,
 }
 
 pre {
-    font-family: $font-family-base;
+    // font-family: $font-family-base;
+    font-family: $font_consolas, $font_monaco, $font_menlo, $font_monospace;
     font-weight: 400;
     font-size: 0.8125rem;
     max-width: 100%;
@@ -19,10 +20,12 @@ pre {
     border-radius: 1px;
 
     code {
-        display: block;
+        font-family: inherit;
+        background: none;
+        display: inline-block;
         white-space: pre;
         word-wrap: normal;
-        font-family: $font_consolas, $font_monaco, $font_menlo, $font_monospace;
+        // font-family: $font_consolas, $font_monaco, $font_menlo, $font_monospace;
     }
 }
 
@@ -36,4 +39,9 @@ pre {
     //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
     border-radius: 3px;
     font-weight: 500;
+}
+
+pre[class~="code-text"] {
+    // padding: 0;
+    // margin: 0;
 }

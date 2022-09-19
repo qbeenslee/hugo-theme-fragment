@@ -182,7 +182,7 @@ $(document).ready(function() {
         var $src = $img.attr("href"),
             $title = $img.attr("alt"),
             $msrc = $img.attr("src"),
-            $dataOriginal = $img.attr("data-original");
+            $dataOriginal = $img.attr("data-src");
 
         $(this).css("cursor", "zoom-in");
         if (($msrc == undefined || $msrc.startsWith("data:")) && $dataOriginal != undefined) {
