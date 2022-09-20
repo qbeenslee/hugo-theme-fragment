@@ -7,7 +7,7 @@
             {{ partial "page/header" . }}
         {{ end }}
     </head>
-    <body {{ block "body-tag" . }}style="background-color:{{ if .Params.bodyColor }}{{.Params.bodyColor | safeCSS}}{{ else if (partial "variable/hasBanner" .) }}#DDDDDD{{ else }}white{{ end }};"{{ end }}>
+    <body {{ block "body-tag" . }}style="background-color:{{ if .Params.bodyColor }}{{.Params.bodyColor | safeCSS}}{{else if .Params.themeColor}}{{.Params.themeColor}}{{ else }}var(--bg){{ end }};"{{ end }}>
         {{ block "navigator" . }}
             {{ partial "plugins/navigation" . }}
         {{ end }}
