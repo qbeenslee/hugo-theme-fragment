@@ -23,7 +23,7 @@
                         {{ if hasPrefix $follower "```"}}
                             {{/*   <!-- {{- $follower | safeHTML | $.Page.RenderString -}} --> */}}
                             {{- $follower | safeHTML | $.Page.RenderString -}}
-                        {{ else}}
+                                                    {{ else}}
                             {{/*  {{- printf "```\n%s\n```" $follower | safeHTML | $.Page.RenderString -}} */}}
                             {{- $follower | $.Page.RenderString -}}
                         {{end}}

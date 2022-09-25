@@ -98,7 +98,7 @@
 
 <--->
 
-<img src="https://www.keka.io/img/Keka-Square-512x512.png"  width="320px" height="320px">
+<img src="https://raw.githubusercontent.com/qbeenslee/img/master/202209/25_866ba6.png"  width="320px" height="320px">
 
 {{< /banner >}}
 ```

@@ -13,10 +13,12 @@
     {{- .Scratch.Set "fragment-data-mode" (default "" (.Get 0)) -}}
     {{- .Scratch.Set "fragment-type" (default "normal" (.Get 1)) -}}
     {{- .Scratch.Set "fragment-style" (default "" (.Get 2)) -}}
+    {{- .Scratch.Set "fragment-flex" (default "" (.Get 3)) -}}
 {{- else -}}
     {{- .Scratch.Set "fragment-data-mode" "" -}}
     {{- .Scratch.Set "fragment-type" (default "normal" (.Get 0)) -}}
     {{- .Scratch.Set "fragment-style" (default "" (.Get 1)) -}}
+    {{- .Scratch.Set "fragment-flex" (default "" (.Get 2)) -}}
 {{- end -}}
 {{- $innerMode := .Scratch.Get "fragment-data-mode" -}}
 {{- $isFixedMode := or (in $MODES $innerMode) (in $MODES $pageMode) -}}
@@ -38,7 +40,7 @@
     <div class="fragment-wrap scope-{{ $scopeType }}">
         <div class="content{{ if $isFixedMode }} fixed-data-mode{{ end }}"{{ if $isFixedMode }} data-mode="{{ $mode | safeCSS }}"{{ end }}>
             {{- if in .Inner "<--->" -}}
-                <div class="fragment-style"{{with $style}} style="{{. | safeCSS}}"{{end}}>
+                <div {{with $style}}style="{{. | safeCSS}}"{{end}} role="fragment-style">
                     <div class="flex {{ if $isWrap }}flex-wrap{{ end }}">
                         {{ range split .Inner "<--->" }}
                             <div {{ if $isWrap }} class="fragment-cell flex-auto-wrap"{{else if (ne $flexCSS "")}}class="fragment-cell" style="{{$flexCSS | safeCSS | safeHTML}};"{{ else }}class="fragment-cell flex-auto-fixed"{{ end }}>
@@ -48,7 +50,7 @@
                     </div>
                 </div>
             {{- else -}}
-                <div class="flex fragment-style"{{with $style}} style="{{. | safeCSS}}"{{end}}>
+                <div class="flex"{{with $style}}style="{{. | safeCSS}}"{{end}} role="fragment-style">
                     <div class="fragment-cell" {{with $flexCSS}} style="{{. | safeCSS}};"{{end}}>
                         {{ .Inner | $.Page.RenderString }}
                     </div>
