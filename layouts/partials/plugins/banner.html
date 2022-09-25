@@ -11,15 +11,17 @@
     {{- if $diyBanner -}}
         {{- $diyBackground := index $diyBanner "style" -}}
         {{- $diyDataMode := index $diyBanner "mode" -}}
+        {{- $diyFlex := index $diyBanner "flex" -}}
         {{- $diyWrap := index $diyBanner "wrap-content" -}}
         {{- $diyContent := index $diyBanner "content" -}}
+        {{- $flexCSS := cond (ne $diyFlex "") (printf "flex:%s" $diyFlex) "" -}}
         <div id="banner" class="banner {{ .Page.Scratch.Get "bannerHeight" | safeCSS}}">
             <div class="banner-wrap" style="{{ $diyBackground | safeCSS }}">
                 {{- if in $diyContent "<--->" -}}
                     <div class="content full-content-wrap flex justify-content-center align-items-center" {{ with $diyDataMode }}data-mode="{{ . | safeCSS }}"{{ end }}>
                         <div class="flex flex-wrap" >
                             {{ range split $diyContent "<--->" }}
-                                <section class="full-content-inner {{ if $diyWrap }}flex-auto-fixed{{ else }}flex-auto-wrap{{ end }}">
+                                <section class="full-content-inner {{ if $diyWrap }}flex-auto-fixed{{ else }}flex-auto-wrap{{ end }}" {{with $flexCSS}} style="{{.}}"{{end}} >
                                     {{ . | $.Page.RenderString | safeHTML }}
                                 </section>
                             {{ end }}
