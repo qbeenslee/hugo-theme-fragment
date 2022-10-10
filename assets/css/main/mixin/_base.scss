@@ -272,3 +272,10 @@ $moz19: false !default; //是否兼容 Firefox <= 19
     @return ($px / $base-font-size) * 1rem;
 }
 
+@mixin horizontal-safe {
+    max-width: $size_page_max_content_width;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    display: block;
+}

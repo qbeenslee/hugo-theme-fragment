@@ -88,8 +88,6 @@ body {
     @include box-sizing(border-box);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    overflow-y: scroll;
     text-rendering: optimizeLegibility;
     vertical-align: baseline;
     font-family: $font-family-base;
@@ -334,24 +332,4 @@ nav {
 .safe2bottom {
     position: absolute;
     bottom: 2%;
-}
-
-@mixin horizontal-safe {
-    max-width: $size_page_max_content_width;
-    padding-left: 0;
-    padding-right: 0;
-    margin: 0 auto;
-    display: block;
-}
-
-.horizontal-scroll {
-    // text-align: center;
-    // white-space: nowrap;
-    // overflow-x: scroll;
-    // overflow-y: hidden;
-
-    // .item {
-    //     white-space: nowrap;
-    //     display: inline-block;
-    // }
 }
