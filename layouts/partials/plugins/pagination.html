@@ -1,30 +1,30 @@
 {{- if and .Site.Params.Plugins.pagination (not (in .Params.hide "pagination")) -}}
     {{- if or .PrevInSection .NextInSection -}}  <!-- TODO not long work -->
         <div class="pagination-container flex flex-wrap">
-            {{- if .PrevInSection -}}
+            {{- if .NextInSection -}}
                 <div class="pagination-item pagination-item--previous">
-                    <a href="{{.PrevInSection.Permalink}}">
+                    <a href="{{.NextInSection.Permalink}}">
                         <div class="pagination-item-label">
                             <svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
                                 <polyline fill="none" vector-effect="non-scaling-stroke" points="8,2 2,8 8,14"></polyline>
                             </svg>
                             <span>{{T "pagination-prev"}}</span>
                         </div>
-                        <div class="pagination-item-title">{{.PrevInSection.Title}}</div>
+                        <div class="pagination-item-title">{{.NextInSection.Title}}</div>
                     </a>
                 </div>
             {{- end -}}
 
-            {{- if .NextInSection -}}
+            {{- if .PrevInSection -}}
                 <div class="pagination-item pagination-item--next">
-                    <a href="{{.NextInSection.Permalink}}">
+                    <a href="{{.PrevInSection.Permalink}}">
                         <div class="pagination-item-label">
                             <span>{{T "pagination-next"}}</span>
                             <svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
                                 <polyline fill="none" vector-effect="non-scaling-stroke" points="2,2 8,8 2,14"></polyline>
                             </svg>
                         </div>
-                        <div class="pagination-item-title">{{.NextInSection.Title}}</div>
+                        <div class="pagination-item-title">{{.PrevInSection.Title}}</div>
                     </a>
                 </div>
             {{- end -}}
