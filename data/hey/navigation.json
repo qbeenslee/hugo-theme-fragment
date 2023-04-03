@@ -1,21 +1,26 @@
-{
+[{
     "name": "归档",
     "identifier": "archives",
     "weight": 30,
     "children": [{
         "name": "全部",
         "identifier": "archives",
-        "url": "archives",
+        "url": "/archives/",
         "weight": 1
     }, {
         "name": "类目",
         "identifier": "archives",
-        "url": "categories",
+        "url": "/categories/",
         "weight": 2
     }, {
         "name": "标签",
         "identifier": "archives",
-        "url": "tags",
+        "url": "/tags/",
         "weight": 3
     }]
-}
+}, {
+    "name": "标签",
+    "identifier": "archives",
+    "url": "/tags/",
+    "weight": 3
+}]

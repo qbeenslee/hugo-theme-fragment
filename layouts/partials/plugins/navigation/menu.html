@@ -1,0 +1,59 @@
+{{$context := .context}}
+{{ range .menu }}
+    {{if .Name}}
+        {{$context.Page.Scratch.Set "Menu.item.Url"  .URL}}
+        {{$context.Page.Scratch.Set "Menu.item.Name" .Name}}
+        {{$context.Page.Scratch.Set "Menu.item.Children" .Children}}
+        {{$context.Page.Scratch.Set "Menu.item.Identifier" .Identifier}}
+    {{else}}
+        {{$context.Page.Scratch.Set "Menu.item.Url" (index . "url")}}
+        {{$context.Page.Scratch.Set "Menu.item.Name" (index . "name")}}
+        {{$context.Page.Scratch.Set "Menu.item.Children" (index . "children")}}
+        {{$context.Page.Scratch.Set "Menu.item.Identifier" (index . "Identifier")}}
+    {{end}}
+    {{$url := $context.Page.Scratch.Get "Menu.item.Url"}}
+    {{$name := $context.Page.Scratch.Get "Menu.item.Name"}}
+    {{$children := $context.Page.Scratch.Get "Menu.item.Children"}}
+    {{$identifier := $context.Page.Scratch.Get "Menu.item.Identifier"}}
+    {{$topLevel := replace .URL "/" ""}}
+
+    <!-- 有可展开项 -->
+    {{ if or .HasChildren (isset . "children") }}
+        {{- $menuSlice := slice "" -}}
+        {{- range $item := $children -}}
+            {{if .URL}}
+                {{- $menuSlice = $menuSlice | append $item.URL -}}
+            {{else}}
+                {{- $menuSlice = $menuSlice | append (index $item "url") -}}
+            {{end}}
+        {{- end -}}
+        <div class="nav-item dropdown">
+            <a class="dropbtn{{ if eq $context.RelPermalink $url | or (in $menuSlice $context.RelPermalink )  | or (eq $context.Type $topLevel) | or (and (eq (default (trim $url "/") $identifier) "blog") (in (slice "taxonomy" "taxonomyTerm") $context.Kind)) }} nav-color-active{{ else }} nav-color-normal{{ end }}">{{ $name }}<span class="caret"></span></a>
+
+            <div class="dropdown-content">
+                {{ range $children }}
+                    {{if .Name}}
+                        {{$context.Page.Scratch.Set "Menu.item.Dp.Url"  .URL}}
+                        {{$context.Page.Scratch.Set "Menu.item.Dp.Name" .Name}}
+                    {{else}}
+                        {{$context.Page.Scratch.Set "Menu.item.Dp.Url" (index . "url")}}
+                        {{$context.Page.Scratch.Set "Menu.item.Dp.Name" (index . "name")}}
+                    {{end}}
+                    {{$u := $context.Page.Scratch.Get "Menu.item.Dp.Url"}}
+                    {{$n := $context.Page.Scratch.Get "Menu.item.Dp.Name"}}
+                    {{- if and (in $u $context.RelPermalink) (ne $context.RelPermalink "/") -}}
+                        <a href="{{ $u }}" class="nav-color-active">{{ $n }}</a>
+                    {{- else -}}
+                        <a href="{{ $u }}">{{ $n }}</a>
+                    {{- end -}}
+                {{ end }}
+            </div>
+        </div>
+
+        <!-- 无展开项 -->
+    {{ else }}
+        <div class="nav-item">
+            <a class="{{ if eq $context.RelPermalink $url | or (and (eq (default (trim $url "/") .Identifier) "blog") (in (slice "taxonomy" "taxonomyTerm") $context.Kind)) }} nav-color-active{{ else }} nav-color-normal{{ end }}" href="{{ $url }}">{{ $name }}</a>
+        </div>
+    {{ end }}
+{{ end }}

@@ -9,32 +9,11 @@
             <!-- middle side-->
             <div class="nav-middle horizontal-scroll">
                 <nav>
-                    {{ range .Site.Menus.main -}}
-                        {{ $topLevel := replace .URL "/" "" }}
-                        {{ if .HasChildren }}
-                            {{- $menuSlice := slice "" -}}
-                            {{- range $item := .Children -}}
-                                {{- $menuSlice = $menuSlice | append $item.URL -}}
-                            {{- end -}}
-                            <div class="nav-item dropdown">
-                                <a class="dropbtn{{ if eq $current.RelPermalink .URL | or (in $menuSlice $current.RelPermalink )  | or (eq $current.Type $topLevel) | or (and (eq (default (trim .URL "/") .Identifier) "blog") (in (slice "taxonomy" "taxonomyTerm") $current.Kind)) }} nav-color-active{{ else }} nav-color-normal{{ end }}">{{ .Name }}<span class="caret"></span></a>
+                    <!-- Auto generate navigation bar menu -->
+                    {{ partial "plugins/navigation/menu" (dict "context" $current "menu" .Site.Data.hey.navigation) }}
 
-                                <div class="dropdown-content">
-                                    {{ range .Children }}
-                                        {{- if and (in .URL $current.RelPermalink) (ne $current.RelPermalink "/") -}}
-                                            <a href="{{ .URL }}" class="nav-color-active">{{ .Name }}</a>
-                                        {{- else -}}
-                                            <a href="{{ .URL }}">{{ .Name }}</a>
-                                        {{- end -}}
-                                    {{ end }}
-                                </div>
-                            </div>
-                        {{- else -}}
-                            <div class="nav-item">
-                                <a class="{{ if eq $current.RelPermalink .URL | or (eq $current.Type $topLevel) | or (and (eq (default (trim .URL "/") .Identifier) "blog") (in (slice "taxonomy" "taxonomyTerm") $current.Kind)) }} nav-color-active{{ else }} nav-color-normal{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
-                            </div>
-                        {{- end -}}
-                    {{ end }}
+                    <!-- Define navigation bar menu -->
+                    {{ partial "plugins/navigation/menu" (dict "context" $current "menu" .Site.Menus.main) }}
                 </nav>
             </div>
             <!--right side-->
