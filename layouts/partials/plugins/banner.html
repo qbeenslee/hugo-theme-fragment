@@ -44,7 +44,7 @@
                     <div class="banner-background" style="background: {{ .Params.banner | safeCSS }};">
                     </div>
                 {{- else if eq .Params.banner "random" -}}
-                    {{ $randomColor := index (shuffle .Site.Data.hey.color.thumbnails) 1}}
+                    {{ $randomColor := index (shuffle .Site.Data.color.thumbnails) 1}}
                     <div class="banner-background" style="background-image:{{ $randomColor | safeCSS }};"></div>
                 {{- else -}}
                     <img class="nozoom cover lazyload" alt="banner" data-src="{{ .Params.banner }}" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=">

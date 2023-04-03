@@ -15,7 +15,7 @@
             <div class="card-color-thumbnail clearfix" style="background: {{ .current.Params.banner | safeCSS }};">
                 <i class="icon circle white"></i>
             </div>
-        {{- else -}} {{ $randomColor := index (shuffle .current.Site.Data.hey.color.thumbnails) 1}} {{- $thumbnailTitle := (partial "variable/thumbnailTitle" .current) | upper -}} {{- $thumbnailTitleCSS := cond (gt (len $thumbnailTitle) 6) "thumbnail-s" "thumbnail-n" -}}
+        {{- else -}} {{ $randomColor := index (shuffle .current.Site.Data.color.thumbnails) 1}} {{- $thumbnailTitle := (partial "variable/thumbnailTitle" .current) | upper -}} {{- $thumbnailTitleCSS := cond (gt (len $thumbnailTitle) 6) "thumbnail-s" "thumbnail-n" -}}
             <div class="card-color-thumbnail clearfix" style="background-image:{{ $randomColor | safeCSS }} ;">
                 <span class="thumbnail-title {{ $thumbnailTitleCSS }}">{{ $thumbnailTitle }}</span>
                 <i class="icon circle white"></i>

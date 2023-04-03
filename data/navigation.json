@@ -19,8 +19,8 @@
         "weight": 3
     }]
 }, {
-    "name": "标签",
-    "identifier": "archives",
-    "url": "/tags/",
-    "weight": 3
+    "name": "小声BB",
+    "identifier": "bb",
+    "url": "/bb/",
+    "weight": 20
 }]

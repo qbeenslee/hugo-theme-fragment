@@ -2,9 +2,9 @@
 
 <!-- twentytwenty -->
 {{- if in $finalContent "twentytwenty-container" -}}
-    <script src="{{ .Site.Data.hey.cdn.js.jquery_event_move | absURL}}" type="text/javascript"></script>
-    <script src="{{ .Site.Data.hey.cdn.js.jquery_twentytwenty | absURL}}" type="text/javascript"></script>
-    <link rel="stylesheet" href="{{ .Site.Data.hey.cdn.css.jquery_twentytwenty | absURL}}" type="text/css" media="screen" />
+    <script src="{{ .Site.Data.cdn.js.jquery_event_move | absURL}}" type="text/javascript"></script>
+    <script src="{{ .Site.Data.cdn.js.jquery_twentytwenty | absURL}}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{{ .Site.Data.cdn.css.jquery_twentytwenty | absURL}}" type="text/css" media="screen" />
     <script type="text/javascript">
         $(function(){
                     $(".twentytwenty-container").twentytwenty({
@@ -21,7 +21,7 @@
 
 <!-- photoswipe -->
 {{- if and (not (in .Params.hide "photoPopup")) (in $finalContent "image-dialog") -}}
-    <script type="text/javascript" src="{{ .Site.Data.hey.cdn.js.medium_zoom | absURL}}"></script>
+    <script type="text/javascript" src="{{ .Site.Data.cdn.js.medium_zoom | absURL}}"></script>
 {{- end -}}
 
 <!-- math -->
@@ -32,28 +32,28 @@
 
 <!-- toc -->
 {{ if and .Site.Params.toc (not (in .Params.hide "toc")) -}}
-    <script async type="text/javascript" src="{{ .Site.Data.hey.cdn.js.scrollspy | absURL}}"></script>
-    <script async type="text/javascript" src="{{ .Site.Data.hey.cdn.js.jquery_smooth_scroll | absURL}}"></script>
+    <script async type="text/javascript" src="{{ .Site.Data.cdn.js.scrollspy | absURL}}"></script>
+    <script async type="text/javascript" src="{{ .Site.Data.cdn.js.jquery_smooth_scroll | absURL}}"></script>
 {{- else if eq .Params.bannerHeight "full" -}}
-    <script async type="text/javascript" src="{{ .Site.Data.hey.cdn.js.jquery_smooth_scroll | absURL}}"></script>
+    <script async type="text/javascript" src="{{ .Site.Data.cdn.js.jquery_smooth_scroll | absURL}}"></script>
 {{ end }}
 
 <!-- echarts -->
 {{- if in $finalContent "language-echarts" -}}
-    <script type="text/javascript" src="{{ .Site.Data.hey.cdn.js.load_echarts | absURL}}"></script>
-    <script type="text/javascript" src="{{ .Site.Data.hey.cdn.js.echarts | absURL}}"></script>
+    <script type="text/javascript" src="{{ .Site.Data.cdn.js.load_echarts | absURL}}"></script>
+    <script type="text/javascript" src="{{ .Site.Data.cdn.js.echarts | absURL}}"></script>
 {{- end -}}
 
 <!-- capture -->
 {{- if and .Site.Params.Plugins.capture (not (in .Params.hide "capture")) -}}
-    <script src="{{ .Site.Data.hey.cdn.js.capture | absURL }}" type="text/javascript"></script>
+    <script src="{{ .Site.Data.cdn.js.capture | absURL }}" type="text/javascript"></script>
     <!-- https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1 -->
 {{- end -}}
 
 <!-- mermaid -->
 <!-- https://mermaid-js.github.io/mermaid/#/examples -->
 {{- if in $finalContent "language-mermaid" -}}
-    <script type="text/javascript" src="{{ .Site.Data.hey.cdn.js.mermaid | absURL}}"></script>
+    <script type="text/javascript" src="{{ .Site.Data.cdn.js.mermaid | absURL}}"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
 {{- end -}}
 

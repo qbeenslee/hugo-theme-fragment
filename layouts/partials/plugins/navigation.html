@@ -10,7 +10,9 @@
             <div class="nav-middle horizontal-scroll">
                 <nav>
                     <!-- Auto generate navigation bar menu -->
-                    {{ partial "plugins/navigation/menu" (dict "context" $current "menu" .Site.Data.hey.navigation) }}
+                    {{- if not .Site.Params.layout.disableAutoNaviBar -}}
+                        {{ partial "plugins/navigation/menu" (dict "context" $current "menu" .Site.Data.navigation) }}
+                    {{- end -}}
 
                     <!-- Define navigation bar menu -->
                     {{ partial "plugins/navigation/menu" (dict "context" $current "menu" .Site.Menus.main) }}
@@ -18,9 +20,9 @@
             </div>
             <!--right side-->
             <div class="nav-right">
-                {{- partial "plugins/search" . -}}
-                {{- partial "plugins/darkmode" . -}}
-                {{- partial "plugins/capture" . -}}
+                {{- partial "plugins/navigation/search" . -}}
+                {{- partial "plugins/navigation/darkmode" . -}}
+                {{- partial "plugins/navigation/capture" . -}}
             </div>
         </div>
     </header>

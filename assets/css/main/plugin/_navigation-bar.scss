@@ -31,7 +31,7 @@ header {
     }
 
     .nav-left {
-        @include flex(0, 0, 5rem);
+        @include flex(0, 0, 6.5rem);
         .logo {
             font-size: inherit;
             font: normal 1rem $font_kaushan_script, $font_helvetica_neue, $font_helvetica, $font_arial;

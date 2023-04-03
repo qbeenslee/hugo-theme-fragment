@@ -22,9 +22,9 @@
     <link rel='stylesheet' href="{{ .| absURL }}">
 {{- end -}}
 
-<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Data.hey.cdn.img.apple_touch_icon }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Data.hey.cdn.img.favicon_32x32 }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Data.hey.cdn.img.favicon_16x16 }}">
-<link rel="manifest" href="{{ .Site.Data.hey.cdn.etc.site_webmanifest }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Data.cdn.img.apple_touch_icon }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Data.cdn.img.favicon_32x32 }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Data.cdn.img.favicon_16x16 }}">
+<link rel="manifest" href="{{ .Site.Data.cdn.etc.site_webmanifest }}">
 {{ partial "plugins/preload/banner.html" . }}
 {{ partial "page/header-scripts" . }}

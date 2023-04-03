@@ -13,7 +13,7 @@
                         {{- else if or (hasPrefix .current.Params.banner "rgb") (hasPrefix .current.Params.banner "#") -}}
                             <div class="card-color-image" style="height: 100.9%;width: 100.9%;background: {{ .current.Params.banner | safeCSS }};"></div>
                         {{- else -}}
-                            {{ $randomColor := index (shuffle .current.Site.Data.hey.color.thumbnails) 1}}
+                            {{ $randomColor := index (shuffle .current.Site.Data.color.thumbnails) 1}}
                             {{- $thumbnailTitle := (partial "variable/thumbnailTitle" .current) | upper -}}
                             {{- $thumbnailTitleCSS := cond (gt (len $thumbnailTitle) 6) "thumbnail-s" "thumbnail-n" -}}
                             <div class="card-color-image" style="height: 100.9%;width: 100.9%;background-image:{{ $randomColor | safeCSS }} ;">

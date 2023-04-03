@@ -4,7 +4,7 @@
 {{- $terms := .Data.Terms.ByCount -}}
 {{- $length := len $terms -}}
 {{- $type := .Type -}}
-<script type="text/javascript" src="{{ .Site.Data.hey.cdn.js.tags_cloud | absURL}}"></script>
+<script type="text/javascript" src="{{ .Site.Data.cdn.js.tags_cloud | absURL}}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
             var words = [

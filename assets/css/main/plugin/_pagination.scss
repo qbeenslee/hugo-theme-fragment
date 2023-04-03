@@ -2,7 +2,7 @@
     @include justify-content(space-between);
     overflow: hidden;
     margin: 5em 0 3em;
-    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    border-top: 1px solid var(--border-divide);
     color: var(--text-suammary);
 
     .pagination-item {
