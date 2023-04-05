@@ -16,7 +16,7 @@
         counter-reset: li;
         margin: 0 0 0 15px;
         padding: 0;
-        color: var(--text-suammary);
+        color: var(--text-summary);
 
         > li {
             font-weight: 300;
@@ -43,7 +43,7 @@
 
         a {
             &:hover {
-                color: var(--text-suammary);
+                color: var(--text-summary);
             }
         }
     }
