@@ -115,6 +115,6 @@ $text_erorr: "{{T "erorr"}}";
 @import "main/page";
 @import "main/content";
 @import "main/plugin";
-{{- if .Site.Params.Plugins.search -}}
+{{- if or (eq (index .Site.Params.Plugins "search") nil) .Site.Params.Plugins.search -}}
 @import "main/plugin/search";
 {{- end -}}

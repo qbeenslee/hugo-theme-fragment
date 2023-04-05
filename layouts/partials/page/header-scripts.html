@@ -1,7 +1,7 @@
 {{- $finalContent := (.Scratch.Get "content-text") -}}
 
 <!-- darkmode -->
-{{- if and .Site.Params.Plugins.darkmode (not (in .Params.hide "darkmode")) -}}
+{{- if and (and (or (eq (index .Site.Params.Plugins "darkmode") nil) .Site.Params.Plugins.darkmode) (not (in .Params.hide "darkmode"))) (not (in (split "light/dark/black" "/") .Params.themeColor)) -}}
     <script src="{{ .Site.Data.cdn.js.darkmode | absURL }}" type="text/javascript"></script>
 {{- end -}}
 

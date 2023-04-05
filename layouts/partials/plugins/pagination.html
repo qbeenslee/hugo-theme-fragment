@@ -1,4 +1,4 @@
-{{- if and .Site.Params.Plugins.pagination (not (in .Params.hide "pagination")) -}}
+{{- if and (or (eq (index .Site.Params.Plugins "pagination") nil) .Site.Params.Plugins.pagination) (not (in .Params.hide "pagination")) -}}
     {{- if or .PrevInSection .NextInSection -}}  <!-- TODO not long work -->
         <div class="pagination-container flex flex-wrap">
             {{- if .NextInSection -}}

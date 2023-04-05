@@ -10,7 +10,7 @@
             <div class="nav-middle horizontal-scroll">
                 <nav>
                     <!-- Auto generate navigation bar menu -->
-                    {{- if not .Site.Params.layout.disableAutoNaviBar -}}
+                    {{- if or (eq (index .Site.Params.layout "autoNaviBar") nil) .Site.Params.layout.autoNaviBar -}}
                         {{ partial "plugins/navigation/menu" (dict "context" $current "menu" .Site.Data.navigation) }}
                     {{- end -}}
 
