@@ -1,26 +1,33 @@
-[{
-    "name": "归档",
-    "identifier": "archives",
-    "weight": 30,
-    "children": [{
-        "name": "全部",
+[
+    {
+        "name": "小声BB",
+        "identifier": "bb",
+        "url": "/bb/",
+        "weight": 20
+    },
+    {
+        "name": "归档",
         "identifier": "archives",
-        "url": "/archives/",
-        "weight": 1
-    }, {
-        "name": "类目",
-        "identifier": "archives",
-        "url": "/categories/",
-        "weight": 2
-    }, {
-        "name": "标签",
-        "identifier": "archives",
-        "url": "/tags/",
-        "weight": 3
-    }]
-}, {
-    "name": "小声BB",
-    "identifier": "bb",
-    "url": "/bb/",
-    "weight": 20
-}]
+        "weight": 30,
+        "children": [
+            {
+                "name": "全部",
+                "identifier": "archives",
+                "url": "/archives/",
+                "weight": 1
+            },
+            {
+                "name": "类目",
+                "identifier": "archives",
+                "url": "/categories/",
+                "weight": 2
+            },
+            {
+                "name": "标签",
+                "identifier": "archives",
+                "url": "/tags/",
+                "weight": 3
+            }
+        ]
+    }
+]

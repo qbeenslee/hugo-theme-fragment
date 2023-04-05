@@ -1,6 +1,5 @@
 {{$darkmode := and (and (or (eq (index .Site.Params.Plugins "darkmode") nil) .Site.Params.Plugins.darkmode) (not (in .Params.hide "darkmode"))) (not (in (split "light/dark/black" "/") .Params.themeColor))}}
 
-
 {{- if $darkmode -}}
     <div class="nav-item" title="{{ T "darkmode" }}">
         <div class="nav-with-shadow nav-color-subject">
