@@ -51,7 +51,7 @@ $(document).ready(function() {
     };
 
     new Viewer(document.getElementById("content"), {
-        filter(image) {
+        filter: function(image) {
             return imageHolder(image);
         },
         loading: false,
