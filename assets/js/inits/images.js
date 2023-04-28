@@ -54,8 +54,10 @@ $(document).ready(function() {
         filter: function(image) {
             return imageHolder(image);
         },
+        url:"data-src",
         loading: false,
-        navbar: 0,
+        navbar: 2,
+        title:2,
         toolbar: 0
     });
 });
