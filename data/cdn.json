@@ -7,6 +7,7 @@
     "jquery_event_move": "https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.1/jquery.event.move.min.js",
     "jquery_twentytwenty": "https://cdnjs.cloudflare.com/ajax/libs/mhayes-twentytwenty/2.0.0-beta.1/jquery.twentytwenty.min.js",
     "medium_zoom":"https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js",
+    "viewerjs": "https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.js",
     "scrollspy": "/js/scrollspy.js",
     "jquery_smooth_scroll": "https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js",
     "load_echarts": "/js/load-echarts.js",
@@ -20,6 +21,7 @@
   },
   "css": {
     "leafle": "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.min.css",
+    "viewerjs": "https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.min.css",
     "jquery_twentytwenty": "https://cdnjs.cloudflare.com/ajax/libs/mhayes-twentytwenty/1.0.0/css/twentytwenty.min.css",
     "hugo_easy_gallery": "/css/hugo-easy-gallery.css",
     "tags_cloud": "/css/jqcloud.css"

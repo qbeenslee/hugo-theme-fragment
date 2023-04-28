@@ -21,7 +21,8 @@
 
 <!-- photoswipe -->
 {{- if and (not (in .Params.hide "photoPopup")) (in $finalContent "image-dialog") -}}
-    <script type="text/javascript" src="{{ .Site.Data.cdn.js.medium_zoom | absURL}}"></script>
+    <link rel="stylesheet" href="{{ .Site.Data.cdn.css.viewerjs | absURL }}"/>
+    <script type="text/javascript" src="{{ .Site.Data.cdn.js.viewerjs | absURL}}"></script>
 {{- end -}}
 
 <!-- math -->

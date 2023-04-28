@@ -4,7 +4,7 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 */
 
 /* Show an alert if this js file has been loaded twice */
-$(document).ready(function () {
+$(document).ready(function() {
     // $("main").find("img").not(".image-compare-item").lazyload();
     //
     // lazyload();
@@ -12,17 +12,14 @@ $(document).ready(function () {
     lazyload(lazy_imgs);
 });
 
-$(document).ready(function () {
-    if (typeof window.mediumZoom === undefined || typeof window.mediumZoom === "undefined") {
-        return true;
-    }
-    var zoom = mediumZoom();
-    zoom.update({ background: "#000C", margin: 45 });
-
-    var attachHolder = function () {
+/**
+ * Image viewer loading
+ */
+$(document).ready(function() {
+    var imageHolder = function(image) {
         // get properties from child a/img/figcaption elements,
-        var $img = $(this);
         // ignore any figures where class="no-photoswipe" or "nozoom"
+        $img = $(image);
         if (
             $img.hasClass("no-photoswipe") ||
             $img.hasClass("nozoom") ||
@@ -36,22 +33,29 @@ $(document).ready(function () {
             } else {
                 $img.css("cursor", "default");
             }
-            return true;
+            return false;
         }
         var $src = $img.attr("href"),
             $title = $img.attr("alt"),
             $msrc = $img.attr("src"),
             $dataOriginal = $img.attr("data-src");
 
-        $(this).css("cursor", "zoom-in");
+        $img.css("cursor", "zoom-in");
         if (($msrc == undefined || $msrc.startsWith("data:")) && $dataOriginal != undefined) {
             $msrc = $dataOriginal;
         }
         if ($src == undefined) {
             $src = $msrc;
         }
-        zoom.attach(this);
+        return true;
     };
-    // for every figure element on the page:
-    $("#content img").each(attachHolder);
+
+    new Viewer(document.getElementById("content"), {
+        filter(image) {
+            return imageHolder(image);
+        },
+        loading: false,
+        navbar: 0,
+        toolbar: 0
+    });
 });
