@@ -3,7 +3,7 @@
 {{- $pages := $pages | intersect (where $pages "Params.hidden" "ne" true) -}}
 
 {{- $exSections := union (slice "hide" "hidden" "page") .Site.Params.layout.ExcludeSections -}}
-{{- $pages := $pages | intersect (where $pages "Section" "not in" $exSections) -}}
+{{- $pages := where $pages "Section" "not in" $exSections -}}
 
 
 {{- $paginator := .Paginate $pages -}}
@@ -13,7 +13,7 @@
 <div class="{{ if (partial "variable/hasBanner" .) }}top-safe-covered{{ else }}top-safe{{ end  }} {{ cond (eq .Site.Params.Layout.listStyle "list") "horizontal-safe" "" }}">
     <div class="articles {{ $listStyleName }}">
         <div class="articles-wrap">
-            {{- range $pageOne := $paginator.Pages -}}
+            {{- range $pageItem := $paginator.Pages -}}
                 {{- if .Title  -}}
                     {{- $args := (dict "context" $context "current" .) -}}
                     {{- if eq .Site.Params.Layout.listStyle "list" -}}

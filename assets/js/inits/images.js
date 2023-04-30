@@ -58,6 +58,7 @@ $(document).ready(function() {
         loading: false,
         navbar: 2,
         title:2,
-        toolbar: 0
+        toolbar: 0,
+        initialCoverage:1
     });
 });

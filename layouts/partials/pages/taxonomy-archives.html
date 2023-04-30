@@ -5,7 +5,7 @@
 {{- $pages := $regPages | intersect (where $regPages "Params.hidden" "ne" true) -}}
 {{- $sections := slice "hide" -}}
 {{- if .Site.Params.layout.ExcludeSections -}}
-    {{- range $item := (.Site.Params.Elayout.xcludeSections) -}}
+    {{- range $item := (.Site.Params.Elayout.excludeSections) -}}
         {{- $sections = $sections | append $item -}}
     {{- end -}}
 {{- end -}}
