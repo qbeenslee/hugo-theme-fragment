@@ -3,7 +3,7 @@ title: "{{ replace .TranslationBaseName "-" " " | title }}"
 author: {{ .Site.Author.name }}
 date: {{ .Date }}
 lastmod: {{ .Date }}
-draft: true
+draft: false
 hidden: false
 hide: ["capture","math"] #支持"navigationBar/capture/darkmode/search/banner/dateTime/toc/pagination/photoPopup/math/related/comment/copyright/footer"
 themeColor: "" # Options: black/dark/light
