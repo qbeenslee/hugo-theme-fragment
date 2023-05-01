@@ -61,7 +61,8 @@ b,
 strong {
     font-family: inherit;
     font-weight: bold;
-    font-size: inherit;
+    font-size: .9em;
+    color: var(--reverse);
 }
 
 .title {
