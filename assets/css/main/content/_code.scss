@@ -28,7 +28,8 @@ pre,
 //         // font-family: $font_consolas, $font_monaco, $font_menlo, $font_monospace;
 //     }
 // }
-
+.switcher-content code,
+.switcher-content pre,
 code[class*="code-"],
 pre[class*="code-"] {
     overflow: auto;
